@@ -25,6 +25,8 @@
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            word-break: keep-all;
+            overflow-wrap: break-word;
         }
         a { text-decoration: none; color: inherit; }
 
@@ -219,6 +221,29 @@
         }
         .floating-cta:hover { transform: translateX(-50%) translateY(-2px); box-shadow: 0 8px 32px rgba(42,95,255,0.5); }
 
+        /* Review Image Slider */
+        .review-img-slider {
+            display: flex;
+            gap: 16px;
+            width: max-content;
+            animation: reviewImgScroll 50s linear infinite;
+            padding: 0 16px;
+        }
+        .review-img-slider:hover {
+            animation-play-state: paused;
+        }
+        .review-img-slider img {
+            flex-shrink: 0;
+            height: 400px;
+            width: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        @keyframes reviewImgScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         /* Responsive */
         @media (max-width: 640px) {
             .hero-section { padding: 130px 20px 60px; }
@@ -280,6 +305,10 @@
                 <div class="authority-stat"><strong>5,000만원</strong><span>블로그 강의 매출</span></div>
                 <div class="authority-stat"><strong>2,000만원</strong><span>블로그로 만든 월 매출</span></div>
             </div>
+            <div style="margin:32px 0; border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,0.1);">
+                <img src="lecture-proof.png" alt="블로그 전자강의 실제 판매 화면" style="width:100%; display:block;">
+            </div>
+            <p style="text-align:center; font-size:0.85rem; color:rgba(255,255,255,0.3); margin-bottom:32px;">실제 블로그 전자강의 판매 화면 (선착순 40명 마감)</p>
             <p class="authority-quote" style="font-size:1.15rem; line-height:1.8;">
                 7년 동안 블로그로 매출을 만들었고,<br>
                 그 방법을 100명 넘는 원장님께 가르쳤습니다.<br><br>
@@ -301,7 +330,12 @@
                 <li>GPT로 뽑아봐도 네이버에선 안 먹힌다</li>
             </ul>
             <div class="problem-quote">
-                결국 배워도<br>"<em>실행이 안 되면</em> 의미가 없더라고요"
+                결국 배워도 "<em>실행이 안 되면</em> 의미가 없더라고요"
+            </div>
+            <div style="text-align:center; margin-top:32px; padding:28px 24px; background:var(--accent); border-radius:16px; color:#fff;">
+                <p style="font-size:1.3rem; font-weight:900; line-height:1.6; margin:0;">
+                    원장님은 시술에 집중하세요. 마케팅은 도구에 맡기는 게 맞습니다.
+                </p>
             </div>
         </div>
     </section>
@@ -317,7 +351,7 @@
             </p>
             <div class="solution-features">
                 <div class="solution-feature">7년간 제가 직접 쓴 블로그 노하우</div>
-                <div class="solution-feature">100명 가르치면서 정리한 상위노출 공식</div>
+                <div class="solution-feature">100명 가르치며 정리한 상위노출 공식</div>
                 <div class="solution-feature">네이버 C-RANK 알고리즘 반영</div>
                 <div class="solution-feature">이 모든 걸 AI에 넣었습니다</div>
             </div>
@@ -328,33 +362,8 @@
     <!-- 5. 실제 결과 증명 -->
     <section class="section proof-section">
         <div class="section-inner">
-            <h2 class="proof-title">진짜 상위노출 됩니다.</h2>
-            <p class="proof-sub">블로그라이터로 작성한 글의 실제 네이버 검색 결과</p>
-            <div class="proof-card">
-                <div class="proof-mock">
-                    <div class="proof-mock-header">
-                        <div class="proof-mock-dot" style="background:#FF5F57;"></div>
-                        <div class="proof-mock-dot" style="background:#FFBD2E;"></div>
-                        <div class="proof-mock-dot" style="background:#28CA41;"></div>
-                        <span class="proof-mock-url">search.naver.com</span>
-                    </div>
-                    <div class="proof-rank">
-                        <div class="proof-rank-item highlight">
-                            <span class="proof-rank-num">1위</span>
-                            <span>"강남 반영구 눈썹" — 블로그라이터로 작성</span>
-                        </div>
-                        <div class="proof-rank-item">
-                            <span class="proof-rank-num" style="color:var(--text-sub);">2위</span>
-                            <span style="color:var(--text-sub);">타 블로그 A</span>
-                        </div>
-                        <div class="proof-rank-item">
-                            <span class="proof-rank-num" style="color:var(--text-sub);">3위</span>
-                            <span style="color:var(--text-sub);">타 블로그 B</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="proof-caption">이 글, 블로그라이터로 <em>3분 만에</em> 썼습니다.</p>
-            </div>
+            <h2 class="proof-title">아직도 블로그 안 하신다면,<br>실수하고 계신 겁니다.</h2>
+            <p class="proof-sub">언제까지 미루실 거에요? 블로그라이터로 작성한 글의 실제 검색 결과입니다.</p>
         </div>
     </section>
 
@@ -408,13 +417,13 @@
             <h2 class="oldway-title">아직도 이렇게 하고 계세요?</h2>
             <p class="oldway-sub">대부분의 원장님이 거치는 과정입니다.</p>
             <div class="oldway-steps">
-                <div class="oldway-step"><span class="num">1</span>블로그 강의 듣고 (10만원+)</div>
+                <div class="oldway-step"><span class="num">1</span>블로그 강의 듣고 (50만원)</div>
                 <div class="oldway-step"><span class="num">2</span>키워드 공부하고</div>
                 <div class="oldway-step"><span class="num">3</span>GPT로 글 뽑아보고</div>
                 <div class="oldway-step"><span class="num">4</span>네이버에 안 뜨니까 또 수정하고</div>
                 <div class="oldway-step"><span class="num">5</span>결국 3일 만에 포기</div>
             </div>
-            <div class="problem-quote">배우느라 쓴 시간과 돈,<br><em>그걸로 블로그라이터 6개월 씁니다.</em></div>
+            <div class="problem-quote">배우느라 쓴 시간과 돈, <em>그걸로 블로그라이터 6개월 씁니다.</em></div>
         </div>
     </section>
 
@@ -446,7 +455,7 @@
                     </p>
                 </div>
             </div>
-            <p class="ba-verdict">배운 사람과 도구를 쓴 사람,<br>결과가 다릅니다.</p>
+            <p class="ba-verdict">배운 사람과 도구를 쓴 사람, 결과가 다릅니다.</p>
         </div>
     </section>
 
@@ -464,14 +473,81 @@
                     <p>상위노출되는 글을 만드는 도구<br><br>키워드 자동 분석<br>네이버 C-RANK 반영<br>상위노출 구조 적용<br>수정 없이 바로 발행 가능</p>
                 </div>
             </div>
-            <p class="diff-bottom">GPT는 "글"을 써주고,<br>블로그라이터는 "결과"를 만들어줍니다.</p>
+            <p class="diff-bottom">GPT는 "글"을 써주고, 블로그라이터는 "결과"를 만들어줍니다.</p>
         </div>
     </section>
 
-    <!-- 10. 타겟 -->
+    <!-- 10. 실제 후기 캡쳐 -->
+    <section style="padding:100px 0; background:#fff; border-bottom:1px solid var(--border); overflow:hidden;">
+        <div style="max-width:720px; margin:0 auto; padding:0 24px;">
+            <h2 style="font-size:1.8rem; font-weight:900; text-align:center; margin-bottom:12px;">실제 원장님들의 반응</h2>
+            <p style="text-align:center; color:var(--text-sub); margin-bottom:40px;">블로그라이터를 사용한 원장님들의 실제 카톡 캡쳐입니다.</p>
+        </div>
+        <div style="position:relative; overflow:hidden;">
+            <div class="review-img-slider">
+                <img src="reviews/review1.jpg" alt="후기">
+                <img src="reviews/review2.jpg" alt="후기">
+                <img src="reviews/review3.jpg" alt="후기">
+                <img src="reviews/review4.jpg" alt="후기">
+                <img src="reviews/review5.jpg" alt="후기">
+                <img src="reviews/review6.jpg" alt="후기">
+                <img src="reviews/review7.jpg" alt="후기">
+                <img src="reviews/review8.jpg" alt="후기">
+                <img src="reviews/review9.jpg" alt="후기">
+                <img src="reviews/review10.jpg" alt="후기">
+                <img src="reviews/review11.jpg" alt="후기">
+
+                <img src="reviews/review13.jpg" alt="후기">
+                <!-- 복제 (무한 루프) -->
+                <img src="reviews/review1.jpg" alt="후기">
+                <img src="reviews/review2.jpg" alt="후기">
+                <img src="reviews/review3.jpg" alt="후기">
+                <img src="reviews/review4.jpg" alt="후기">
+                <img src="reviews/review5.jpg" alt="후기">
+                <img src="reviews/review6.jpg" alt="후기">
+                <img src="reviews/review7.jpg" alt="후기">
+                <img src="reviews/review8.jpg" alt="후기">
+                <img src="reviews/review9.jpg" alt="후기">
+                <img src="reviews/review10.jpg" alt="후기">
+                <img src="reviews/review11.jpg" alt="후기">
+
+                <img src="reviews/review13.jpg" alt="후기">
+            </div>
+            <div style="position:absolute;top:0;bottom:0;left:0;width:80px;background:linear-gradient(to right,#fff,transparent);pointer-events:none;z-index:1;"></div>
+            <div style="position:absolute;top:0;bottom:0;right:0;width:80px;background:linear-gradient(to left,#fff,transparent);pointer-events:none;z-index:1;"></div>
+        </div>
+        <p style="text-align:center; font-size:0.8rem; color:var(--text-sub); margin-top:24px;">※ 개인정보 보호를 위해 일부 정보는 가려져 있습니다.</p>
+    </section>
+
+    <!-- 업종 확장 -->
+    <section class="section" style="background:var(--bg-dark); color:#fff;">
+        <div class="section-inner" style="text-align:center;">
+            <h2 style="font-size:1.5rem; font-weight:900; margin-bottom:24px; line-height:1.5;">
+                "뭐야, 반영구 업종만 쓰는 거 아니야?"
+            </h2>
+            <p style="font-size:1.8rem; font-weight:900; color:var(--accent); margin-bottom:24px;">아닙니다.</p>
+            <p style="font-size:1.05rem; color:rgba(255,255,255,0.6); line-height:1.9; margin-bottom:36px;">
+                피부관리, 네일, 왁싱, 헤어, 속눈썹, 에스테틱… 업종은 달라도 <strong style="color:#fff;">블로그 상위노출 공식은 모두 같습니다.</strong>
+            </p>
+            <p style="font-size:1.05rem; color:rgba(255,255,255,0.6); line-height:1.9; margin-bottom:36px;">
+                키워드 구조, 글 흐름, C-RANK 로직 — 네이버가 좋아하는 글의 규칙은 <strong style="color:#fff;">업종을 가리지 않아요.</strong>
+            </p>
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px;">
+                <span style="padding:8px 20px; border-radius:100px; border:1px solid rgba(255,255,255,0.15); font-size:0.9rem; color:rgba(255,255,255,0.5);">반영구</span>
+                <span style="padding:8px 20px; border-radius:100px; border:1px solid rgba(255,255,255,0.15); font-size:0.9rem; color:rgba(255,255,255,0.5);">피부관리</span>
+                <span style="padding:8px 20px; border-radius:100px; border:1px solid rgba(255,255,255,0.15); font-size:0.9rem; color:rgba(255,255,255,0.5);">네일</span>
+                <span style="padding:8px 20px; border-radius:100px; border:1px solid rgba(255,255,255,0.15); font-size:0.9rem; color:rgba(255,255,255,0.5);">왁싱</span>
+                <span style="padding:8px 20px; border-radius:100px; border:1px solid rgba(255,255,255,0.15); font-size:0.9rem; color:rgba(255,255,255,0.5);">헤어</span>
+                <span style="padding:8px 20px; border-radius:100px; border:1px solid rgba(255,255,255,0.15); font-size:0.9rem; color:rgba(255,255,255,0.5);">속눈썹</span>
+                <span style="padding:8px 20px; border-radius:100px; border:1px solid rgba(255,255,255,0.15); font-size:0.9rem; color:rgba(255,255,255,0.5);">에스테틱</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. 타겟 -->
     <section class="section target-section">
         <div class="section-inner">
-            <h2 class="target-title">이런 분이라면,<br>더 이상 고민하지 마세요.</h2>
+            <h2 class="target-title">이런 분이라면, 더 이상 고민하지 마세요.</h2>
             <div class="target-list">
                 <div class="target-item">블로그 강의 들었는데 실행이 안 되는 분</div>
                 <div class="target-item">본업이 바빠서 글 쓸 시간이 없는 분</div>
@@ -486,7 +562,7 @@
         <div class="section-inner">
             <p class="cta-sub">블로그, 이제 배우지 마세요.</p>
             <p class="cta-title">그냥 쓰세요.</p>
-            <p class="cta-highlight">"배울 시간에<br><em>글 하나 더 올리세요.</em>"</p>
+            <p class="cta-highlight">"배울 시간에 <em>글 하나 더 올리세요.</em>"</p>
             <a href="https://www.blogwriter.co.kr" target="_blank" class="btn-main">무료로 3번 써보기 →</a>
             <p class="cta-note">가입 즉시 하루 3회 무료 생성 · 카드 등록 없음</p>
         </div>
