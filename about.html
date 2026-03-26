@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소개 | EAZY</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #1a1a2e;
+            --accent: #2A5FFF;
+            --bg-dark: #111111;
+            --text: #1a1a1a;
+            --text-sub: #888888;
+            --text-light: #aaaaaa;
+            --border: #EBEBEB;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Sans KR', -apple-system, sans-serif;
+            color: var(--text); line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; word-break: keep-all; background: #fff;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(17,17,17,0.9);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        }
+        .header-inner {
+            max-width: 1100px; margin: 0 auto; padding: 0 24px;
+            height: 60px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo { font-size: 1.2rem; font-weight: 900; color: #fff; border: 2px solid rgba(255,255,255,0.3); padding: 4px 12px; border-radius: 8px; }
+        .back-link { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+        .back-link:hover { color: #fff; }
+
+        .section { padding: 0 24px; }
+        .section-inner { max-width: 680px; margin: 0 auto; }
+
+        /* Hero */
+        .hero { background: var(--bg-dark); padding: 160px 24px 80px; text-align: center; }
+        .hero-quote {
+            font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 900; color: #fff;
+            line-height: 1.4; margin-bottom: 24px;
+        }
+        .hero-quote em { font-style: normal; color: var(--accent); }
+        .hero-context { font-size: 1.05rem; color: rgba(255,255,255,0.45); line-height: 2; }
+
+        /* Story sections */
+        .story { padding: 80px 24px; }
+        .story-label {
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 16px;
+        }
+        .story-title { font-size: 1.5rem; font-weight: 900; margin-bottom: 24px; line-height: 1.4; }
+        .story-text { font-size: 1.05rem; color: var(--text-sub); line-height: 2.2; margin-bottom: 24px; }
+        .story-text strong { color: var(--text); font-weight: 700; }
+
+        /* Stats */
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 32px 0;
+        }
+        .stat-card {
+            background: #F8F8F8; border-radius: 14px; padding: 24px 20px; text-align: center;
+        }
+        .stat-num { font-size: 1.6rem; font-weight: 900; color: var(--accent); display: block; margin-bottom: 4px; }
+        .stat-label { font-size: 0.85rem; color: var(--text-sub); }
+
+        /* Highlight box */
+        .highlight-box {
+            background: var(--bg-dark); color: #fff; border-radius: 16px;
+            padding: 32px; text-align: center; font-size: 1.15rem;
+            font-weight: 800; line-height: 1.7; margin: 32px 0;
+        }
+        .highlight-box em { font-style: normal; color: var(--accent); }
+
+        /* Quote */
+        .pull-quote {
+            border-left: 3px solid var(--accent); padding: 20px 24px;
+            margin: 32px 0; background: #F8FAFF; border-radius: 0 12px 12px 0;
+        }
+        .pull-quote p { font-size: 1.1rem; font-weight: 700; line-height: 1.7; color: var(--primary); }
+
+        /* Divider */
+        .divider { height: 1px; background: var(--border); margin: 0; }
+
+        /* CTA */
+        .cta-section { background: var(--bg-dark); text-align: center; padding: 80px 24px; }
+        .cta-title { font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.5; }
+        .cta-desc { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 32px; line-height: 1.8; }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: #fff;
+            padding: 16px 40px; border-radius: 12px; font-size: 1rem; font-weight: 700;
+            transition: all 0.2s;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(42,95,255,0.4); }
+
+        @media (max-width: 640px) {
+            .hero { padding: 130px 20px 60px; }
+            .story { padding: 60px 20px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">EAZY.</a>
+            <a href="index.html" class="back-link">← 돌아가기</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1 class="hero-quote">"무모하게도,<br><em>28% 대출</em>부터 받고<br>시작했습니다."</h1>
+        <p class="hero-context">
+            26살, 가진 돈 하나 없이<br>
+            2400만원 대출로 반영구 샵을 시작했습니다.<br><br>
+            금리가 뭔지도, 28%가 얼마나 무서운 숫자인지도<br>
+            제대로 알지 못했던 시절이었습니다.
+        </p>
+    </section>
+
+    <!-- 과거 -->
+    <section class="story" style="background:#fff;">
+        <div class="section-inner">
+            <p class="story-label" style="color:var(--text-light);">과거</p>
+            <h2 class="story-title">선택지가 없었던 시절</h2>
+            <p class="story-text">
+                그때의 저는 선택지가 많지 않았습니다.
+                가난한 환경 속에서 자라며 늘 더 나은 삶을 꿈꿨지만,
+                무엇을 해야 할지 모르는 사람이었습니다.
+            </p>
+            <p class="story-text">
+                23살, 아무 준비 없이 떠났던 <strong>호주 워킹홀리데이</strong>는
+                제 인생의 첫 번째 전환점이 되었습니다.
+                영어 한마디 제대로 하지 못했던 그곳에서
+                저는 처음으로 깨달았습니다.
+            </p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:24px 0;">
+                <img src="workingholiday.jpg" alt="호주 워킹홀리데이" style="width:100%; border-radius:12px; object-fit:cover; height:200px;">
+                <img src="workingholiday2.jpg" alt="호주 워킹홀리데이" style="width:100%; border-radius:12px; object-fit:cover; height:200px;">
+            </div>
+            <div class="pull-quote">
+                <p>"나는 우물 안의 개구리였구나."</p>
+            </div>
+            <p class="story-text">
+                그 이후, 더 이상 환경을 탓하지 않기로 했습니다.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 성장 -->
+    <section class="story" style="background:#fff;">
+        <div class="section-inner">
+            <p class="story-label" style="color:var(--accent);">성장</p>
+            <h2 class="story-title">결과를 만들기 시작한 시기</h2>
+            <p class="story-text">
+                한국으로 돌아온 저는 기술과 마케팅을 동시에 붙잡기 시작했습니다.
+                단순히 기술만 잘해서는 오래 살아남을 수 없다는 것을
+                일찍 깨달았기 때문입니다.
+            </p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:24px 0;">
+                <img src="shop-open1.jpg" alt="가게 오픈" style="width:100%; border-radius:12px; object-fit:cover; height:200px;">
+                <img src="shop-open2.jpg" alt="가게 오픈" style="width:100%; border-radius:12px; object-fit:cover; height:200px;">
+                <img src="shop-open3.jpg" alt="가게 오픈" style="width:100%; border-radius:12px; object-fit:cover; height:200px;">
+                <img src="shop-open4.jpg" alt="가게 오픈" style="width:100%; border-radius:12px; object-fit:cover; height:200px;">
+            </div>
+            <p class="story-text">그 결과,</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-num">700만원</span>
+                    <span class="stat-label">오픈 첫 달 매출</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">6개월</span>
+                    <span class="stat-label">대출 전액 상환</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">2,000만원</span>
+                    <span class="stat-label">월 평균 매출</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">2,800만원</span>
+                    <span class="stat-label">월 최고 매출</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">50만원</span>
+                    <span class="stat-label">천안아산 최초 시술가</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-num">1만명+</span>
+                    <span class="stat-label">누적 시술</span>
+                </div>
+            </div>
+
+            <p class="story-text">
+                이라는 결과를 만들어낼 수 있었습니다.
+            </p>
+
+            <div class="highlight-box">
+                연고도 없는 지역에서 이 결과를 만들 수 있었던 이유는<br>
+                단순한 기술이 아니라 <em>'구조'를 만들었기 때문</em>입니다.
+            </div>
+
+            <p style="text-align:center; font-size:1.2rem; font-weight:900; margin-top:32px; margin-bottom:12px;">7년 동안 총 매출 <span style="color:var(--accent);">10억</span> 달성</p>
+            <img src="cashpaper.jpg" alt="수입 10억" style="width:100%; border-radius:12px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:12px;">
+                <img src="newshop.jpg" alt="새 매장" style="width:100%; border-radius:12px; object-fit:cover; height:180px;">
+                <img src="newshop2.jpg" alt="새 매장 내부" style="width:100%; border-radius:12px; object-fit:cover; height:180px;">
+                <img src="siyeon.jpg" alt="시연 교육" style="width:100%; border-radius:12px; object-fit:cover; height:180px;">
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 전환 -->
+    <section class="story" style="background:#FAFAFA;">
+        <div class="section-inner">
+            <p class="story-label" style="color:#FF4444;">전환</p>
+            <h2 class="story-title">가장 중요한 깨달음</h2>
+            <p class="story-text">
+                하지만 그 과정에서 저는 한 번 무너지게 됩니다.
+                매출은 늘어났지만, 몸과 마음은 점점 지쳐갔고
+                결국 <strong>번아웃과 우울</strong>을 겪게 되었습니다.
+            </p>
+            <p class="story-text">
+                그때 처음으로 스스로에게 질문했습니다.
+            </p>
+            <div class="pull-quote">
+                <p>"나는 왜 이 일을 시작했을까?"</p>
+            </div>
+            <p class="story-text">
+                그리고 깨달았습니다.
+                제가 가장 행복한 순간은 돈을 벌 때가 아니라,
+                <strong>누군가가 제 도움으로 성장하는 모습을 볼 때</strong>라는 것을.
+            </p>
+        </div>
+    </section>
+
+    <!-- 현재 -->
+    <section class="story" style="background:#fff;">
+        <div class="section-inner">
+            <p class="story-label" style="color:var(--accent);">현재</p>
+            <h2 class="story-title">지금 이 일을 하는 이유</h2>
+            <p class="story-text">
+                그래서 저는 방향을 바꾸기로 했습니다.
+                돈을 더 버는 사람이 아니라,
+                <strong>더 많은 원장님들이 살아남을 수 있도록 돕는 사람</strong>이 되기로.
+            </p>
+            <p class="story-text">
+                그렇게 만든 것이
+                <strong>블로그라이터</strong>, <strong>홈페이지 구축 서비스</strong>, <strong>매출 구조 코칭</strong>입니다.
+            </p>
+            <p class="story-text">
+                직접 겪어봤기 때문에, 진짜 필요한 것만 만듭니다.
+                코칭을 받으신 원장님들의 <strong>평균 매출이 2배</strong> 올랐습니다.
+            </p>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 마지막 메시지 -->
+    <section class="story" style="background:#fff;">
+        <div class="section-inner">
+            <p class="story-label" style="color:var(--primary);">메시지</p>
+            <h2 class="story-title">이 글을 읽고 계신 원장님께</h2>
+            <p class="story-text">
+                아마 이 글을 읽고 계신 분들 중에는,
+                이미 샵을 운영하고 있지만 매출이 들쭉날쭉해 고민하는 분도 있을 것이고,
+                아직 시작 전이지만 막막함 속에서 방향을 찾고 있는 분도 있을 겁니다.
+            </p>
+            <p class="story-text">
+                저 역시 같은 시간을 지나왔던 사람이었습니다.
+            </p>
+            <p class="story-text">
+                그래서 저는 단순히 기술을 가르치는 사람이 아니라,
+                <strong>혼자서도 살아남을 수 있는 구조를 함께 만들어주는 사람</strong>이 되고 싶습니다.
+            </p>
+
+            <div class="highlight-box">
+                기술만으로는 오래 살아남기 어렵습니다.<br><br>
+                하지만 구조를 만들면,<br>
+                <em>혼자서도 살아남을 수 있습니다.</em><br><br>
+                <span style="font-size:0.95rem; font-weight:500; color:rgba(255,255,255,0.5);">그것이 제가 이 일을 계속하는 이유입니다.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2 class="cta-title">함께 구조를 만들어보실 원장님,<br>편하게 연락 주세요.</h2>
+        <p class="cta-desc">상담은 무료입니다.</p>
+        <a href="index.html#services" class="cta-btn">서비스 둘러보기 →</a>
+    </section>
+
+</body>
+</html>
