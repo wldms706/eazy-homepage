@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1418494838780017');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1418494838780017&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta property="og:title" content="그라운드 노트 | EAZY">
+    <meta property="og:description" content="맨땅에서 시작해 구조를 만든 사람의 현장 기록">
+    <meta property="og:image" content="https://www.jjeen-eazy.com/about-hero.png">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라운드 노트 | EAZY</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #1a1a2e;
+            --accent: #2A5FFF;
+            --bg-dark: #111111;
+            --text: #1a1a1a;
+            --text-sub: #888888;
+            --text-light: #aaaaaa;
+            --border: #EBEBEB;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Noto Sans KR', -apple-system, sans-serif;
+            color: var(--text); line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden; word-break: keep-all; background: #fff;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        .header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .header-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 24px;
+            height: 64px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .logo { font-size: 1.4rem; font-weight: 900; color: var(--text); }
+        .nav { display: flex; gap: 32px; }
+        .nav a { font-size: 0.9rem; font-weight: 500; color: var(--text-sub); transition: color 0.2s; }
+        .nav a:hover { color: var(--text); }
+        .header-cta {
+            font-size: 0.85rem; font-weight: 700; color: #fff;
+            background: var(--accent); padding: 8px 20px; border-radius: 8px;
+        }
+
+        .page-hero {
+            padding: 120px 24px 60px; text-align: center;
+        }
+        .page-hero .tag {
+            font-size: 0.8rem; font-weight: 700; color: var(--accent);
+            letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;
+        }
+        .page-hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900;
+            line-height: 1.3; margin-bottom: 12px;
+        }
+        .page-hero p {
+            font-size: 1rem; color: var(--text-sub); max-width: 500px; margin: 0 auto;
+        }
+
+        .notion-wrap {
+            max-width: 900px; margin: 0 auto; padding: 0 24px 80px;
+        }
+        .notion-wrap iframe {
+            width: 100%; min-height: calc(100vh - 300px); border: none; border-radius: 12px;
+        }
+
+        .footer {
+            background: var(--bg-dark); color: rgba(255,255,255,0.4);
+            padding: 40px 24px; text-align: center; font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .header-cta { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">EAZY.</a>
+            <nav class="nav">
+                <a href="index.html#services">서비스</a>
+                <a href="index.html#reviews">후기</a>
+                <a href="resources.html">무료자료</a>
+                <a href="columns.html" style="color:var(--text); font-weight:700;">그라운드 노트</a>
+                <a href="about.html">소개</a>
+            </nav>
+            <a href="index.html#services" class="header-cta">무료 상담</a>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <p class="tag">Ground Note</p>
+        <h1>그라운드 노트</h1>
+        <p>맨땅에서 시작해 구조를 만든 사람의 현장 기록</p>
+    </div>
+
+    <div class="notion-wrap">
+        <iframe src="https://resisted-avatar-6bf.notion.site/ebd//85bd7e34f7a147c9842ba87b69fc7418" allowfullscreen></iframe>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 EAZY. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
