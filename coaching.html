@@ -31,153 +31,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #1a1a2e;
-            --accent: #2A5FFF;
-            --bg-dark: #111111;
-            --text: #1a1a1a;
-            --text-sub: #888888;
-            --text-light: #aaaaaa;
-            --border: #EBEBEB;
-        }
+        :root { --accent: #2A5FFF; --bg-dark: #111111; --text: #1a1a1a; --text-sub: #888; --border: #EBEBEB; }
         html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Noto Sans KR', -apple-system, sans-serif;
-            color: var(--text); line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden; word-break: keep-all; background: #fff;
-        }
+        body { font-family: 'Noto Sans KR', -apple-system, sans-serif; color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; word-break: keep-all; background: #fff; }
         a { text-decoration: none; color: inherit; }
 
-        .header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: rgba(17,17,17,0.9);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-        }
-        .header-inner {
-            max-width: 1100px; margin: 0 auto; padding: 0 24px;
-            height: 60px; display: flex; align-items: center; justify-content: space-between;
-        }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(17,17,17,0.9); backdrop-filter: blur(20px); }
+        .header-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
         .logo { font-size: 1.2rem; font-weight: 900; color: #fff; border: 2px solid rgba(255,255,255,0.3); padding: 4px 12px; border-radius: 8px; }
         .back-link { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
-        .back-link:hover { color: #fff; }
 
         .sec { padding: 80px 24px; }
-        .sec-inner { max-width: 720px; margin: 0 auto; }
+        .inner { max-width: 680px; margin: 0 auto; }
+        .title { font-size: 1.5rem; font-weight: 900; margin-bottom: 16px; line-height: 1.4; }
+        .desc { font-size: 1.05rem; color: var(--text-sub); line-height: 2; margin-bottom: 24px; }
 
-        /* Hero */
-        .hero { background: var(--bg-dark); padding: 140px 24px 80px; text-align: center; }
-        .hero-sub { font-size: 0.9rem; color: rgba(255,255,255,0.4); margin-bottom: 16px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
-        .hero-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: #fff; margin-bottom: 16px; line-height: 1.3; }
-        .hero-title em { font-style: normal; color: var(--accent); }
-        .hero-desc { font-size: 1.1rem; color: rgba(255,255,255,0.5); max-width: 600px; margin: 0 auto; line-height: 1.9; }
+        .dark-box { background: var(--bg-dark); color: #fff; border-radius: 16px; padding: 28px; text-align: center; font-size: 1.15rem; font-weight: 800; line-height: 1.6; margin: 24px 0; }
+        .dark-box em { font-style: normal; color: var(--accent); }
+        .blue-box { background: var(--accent); color: #fff; border-radius: 16px; padding: 28px; text-align: center; font-size: 1.15rem; font-weight: 800; line-height: 1.6; margin: 24px 0; }
 
-        /* Story text */
-        .story-text { font-size: 1.05rem; color: var(--text-sub); line-height: 2.2; margin-bottom: 24px; }
-        .story-text strong { color: var(--text); font-weight: 700; }
-        .story-title { font-size: 1.5rem; font-weight: 900; margin-bottom: 24px; line-height: 1.4; }
-
-        /* Problem list */
-        .problem-list { display: flex; flex-direction: column; gap: 12px; margin: 24px 0 32px; }
-        .problem-item {
-            background: #F8F8F8; border-radius: 12px; padding: 18px 24px;
-            font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 12px;
-        }
-        .problem-item::before {
-            content: ''; width: 8px; height: 8px; background: #FF4444;
-            border-radius: 50%; flex-shrink: 0;
-        }
-
-        /* Check list */
-        .check-list { display: flex; flex-direction: column; gap: 12px; margin: 24px 0 32px; }
-        .check-item {
-            background: #F8F8F8; border-radius: 12px; padding: 18px 24px;
-            font-size: 1rem; font-weight: 500; display: flex; align-items: center; gap: 12px;
-        }
-        .check-item::before {
-            content: '✓'; width: 28px; height: 28px;
-            background: var(--accent); color: #fff; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 900; font-size: 0.8rem; flex-shrink: 0;
-        }
-
-        /* Quote box */
-        .quote-box {
-            background: var(--bg-dark); color: #fff; border-radius: 16px;
-            padding: 32px; text-align: center; font-size: 1.2rem;
-            font-weight: 800; line-height: 1.6; margin: 32px 0;
-        }
-        .quote-box em { font-style: normal; color: var(--accent); }
-
-        /* Highlight box */
-        .highlight-box {
-            background: var(--accent); color: #fff; border-radius: 16px;
-            padding: 28px; text-align: center; font-size: 1.15rem;
-            font-weight: 800; line-height: 1.6; margin: 32px 0;
-        }
-
-        /* Pull quote */
-        .pull-quote {
-            border-left: 3px solid var(--accent); padding: 20px 24px;
-            margin: 32px 0; background: #F8FAFF; border-radius: 0 12px 12px 0;
-        }
-        .pull-quote p { font-size: 1.1rem; font-weight: 700; line-height: 1.7; color: var(--primary); }
-
-        /* Divider */
-        .divider { height: 1px; background: var(--border); }
+        .list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+        .list-item { background: #F8F8F8; border-radius: 10px; padding: 16px 20px; font-size: 0.95rem; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+        .dot::before { content: ''; width: 7px; height: 7px; background: #FF4444; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+        .chk::before { content: '✓'; width: 24px; height: 24px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.75rem; flex-shrink: 0; }
 
         /* Tabs */
-        .tab-wrap { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        .tab-btns {
-            display: flex; gap: 0; max-width: 500px; margin: 0 auto 40px;
-        }
-        .tab-btn {
-            flex: 1; padding: 18px 16px; text-align: center;
-            font-size: 1rem; font-weight: 700; cursor: pointer;
-            border: none; background: #fff; color: var(--text-sub);
-            border-bottom: 3px solid var(--border); transition: all 0.2s;
-        }
+        .tab-btns { display: flex; max-width: 460px; margin: 0 auto 32px; }
+        .tab-btn { flex: 1; padding: 16px; text-align: center; font-size: 0.95rem; font-weight: 700; cursor: pointer; border: none; background: #fff; color: var(--text-sub); border-bottom: 3px solid var(--border); transition: all 0.2s; }
         .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-        .tab-btn:first-child { border-radius: 12px 0 0 0; }
-        .tab-btn:last-child { border-radius: 0 12px 0 0; }
-        .tab-content { display: none; padding-bottom: 60px; }
+        .tab-content { display: none; }
         .tab-content.active { display: block; }
 
-        /* Price card */
-        .price-card {
-            background: var(--bg-dark); color: #fff; border-radius: 16px;
-            padding: 32px; text-align: center; margin-bottom: 40px;
-        }
-        .price-amount { font-size: 2rem; font-weight: 900; }
-        .price-note { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 8px; }
+        .price-card { background: var(--bg-dark); color: #fff; border-radius: 16px; padding: 28px; text-align: center; margin-bottom: 32px; }
+        .price-num { font-size: 2rem; font-weight: 900; }
+        .price-sub { font-size: 0.85rem; color: rgba(255,255,255,0.4); margin-top: 6px; }
 
-        /* Info grid */
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 40px; }
-        .info-card { background: #F8F8F8; border-radius: 14px; padding: 24px 20px; text-align: center; }
-        .info-label { font-size: 0.8rem; color: var(--text-sub); margin-bottom: 4px; }
-        .info-value { font-size: 1.3rem; font-weight: 900; color: var(--primary); }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+        .info-card { background: #F8F8F8; border-radius: 12px; padding: 20px; text-align: center; }
+        .info-card .l { font-size: 0.8rem; color: var(--text-sub); }
+        .info-card .v { font-size: 1.2rem; font-weight: 900; margin-top: 2px; }
 
-        /* Badge */
-        .badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; }
-        .badge-blue { background: #e8eeff; color: var(--accent); }
-        .badge-red { background: #ffe8e8; color: #FF4444; }
+        .badge { display: inline-block; font-size: 0.75rem; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 14px; }
 
-        /* CTA */
-        .cta-section { background: var(--bg-dark); text-align: center; padding: 80px 24px; }
-        .cta-title { font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.5; }
-        .cta-desc { font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 32px; line-height: 1.8; }
-        .cta-btn {
-            display: inline-block; background: var(--accent); color: #fff;
-            padding: 16px 40px; border-radius: 12px; font-size: 1rem; font-weight: 700;
-            transition: all 0.2s;
-        }
+        .cta-sec { background: var(--bg-dark); text-align: center; padding: 80px 24px; }
+        .cta-sec h2 { font-size: 1.4rem; font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.5; }
+        .cta-sec p { color: rgba(255,255,255,0.5); margin-bottom: 28px; }
+        .cta-btn { display: inline-block; background: var(--accent); color: #fff; padding: 16px 40px; border-radius: 12px; font-size: 1rem; font-weight: 700; transition: all 0.2s; }
         .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(42,95,255,0.4); }
 
-        @media (max-width: 640px) {
-            .hero { padding: 120px 20px 60px; }
-            .sec { padding: 60px 20px; }
-            .info-grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -189,178 +91,73 @@
         </div>
     </header>
 
-    <!-- 1. 상식파괴 히어로 -->
-    <section class="hero">
-        <p class="hero-sub">Coaching & Done-For-You</p>
-        <h1 class="hero-title">"열심히 광고하면<br>매출 오를 거라<br><em>생각하시죠?</em>"</h1>
-        <p class="hero-desc">
-            대부분 원장님이 여기서 막힙니다.<br>
-            광고를 몰라서가 아닙니다.<br>
-            <strong style="color:#fff;">'판'이 없어서입니다.</strong>
-        </p>
+    <!-- 히어로 -->
+    <section style="background:var(--bg-dark); padding:140px 24px 80px; text-align:center;">
+        <div class="inner">
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.4); letter-spacing:2px; text-transform:uppercase; font-weight:600; margin-bottom:16px;">Coaching & Done-For-You</p>
+            <h1 style="font-size:clamp(2rem,5vw,3rem); font-weight:900; color:#fff; line-height:1.3; margin-bottom:16px;">
+                광고 돌려도 매출 안 오르죠?<br><span style="color:var(--accent);">'판'이 없어서입니다.</span>
+            </h1>
+            <p style="font-size:1.05rem; color:rgba(255,255,255,0.45); line-height:1.9;">
+                지은 대표님이 매출의 판을 직접 짜드립니다.
+            </p>
+        </div>
     </section>
 
-    <!-- 2. 공감 — 혼자 하는 원장의 현실 -->
-    <section class="sec" style="background:#fff; border-bottom:1px solid var(--border);">
-        <div class="sec-inner">
-            <h2 class="story-title">혼자서 샵을 운영한다는 건<br>생각보다 훨씬 외롭고 힘든 일입니다.</h2>
-            <div class="problem-list">
-                <div class="problem-item">광고는 해야 하는데, 어디서부터 손대야 할지 모르겠고</div>
-                <div class="problem-item">업체에 맡기자니 불안하고</div>
-                <div class="problem-item">직접 하자니 시간이 없습니다</div>
+    <!-- 공감 + 문제 -->
+    <section class="sec" style="border-bottom:1px solid var(--border);">
+        <div class="inner">
+            <h2 class="title">이런 상황 아니신가요?</h2>
+            <div class="list">
+                <div class="list-item dot">광고 돌렸는데 문의가 없다</div>
+                <div class="list-item dot">문의는 오는데 예약이 안 된다</div>
+                <div class="list-item dot">예약은 되는데 매출이 안 오른다</div>
+                <div class="list-item dot">릴스, 블로그, 광고 — 뭘 해야 할지 모르겠다</div>
             </div>
-            <p class="story-text">그래서 대부분 이렇게 됩니다.</p>
-            <div class="problem-list">
-                <div class="problem-item">광고는 돌렸는데 문의가 없다</div>
-                <div class="problem-item">문의는 오는데 예약이 안 된다</div>
-                <div class="problem-item">예약은 되는데 매출이 안 오른다</div>
-            </div>
-            <div class="quote-box">
-                문제는 광고가 아닙니다.<br><em>'판'이 없기 때문입니다.</em>
+            <div class="dark-box">
+                릴스만 찍어도, 광고만 돌려도, 홈페이지만 만들어도 안 됩니다.<br>
+                모든 건 연결된 <em>매출 구조</em> 안에서 움직입니다.
             </div>
         </div>
     </section>
 
-    <!-- 3. 문제 정의 — 진짜 이유 -->
-    <section class="sec" style="background:#FAFAFA; border-bottom:1px solid var(--border);">
-        <div class="sec-inner">
-            <h2 class="story-title">대부분 실패하는 진짜 이유</h2>
-            <p class="story-text">
-                많은 원장님들이 이렇게 생각합니다.<br><br>
-                "릴스 찍으면 되겠지"<br>
-                "광고만 돌리면 되겠지"<br><br>
-                하지만 현실은 다릅니다.
-            </p>
-            <p class="story-text">
-                릴스만 찍어도 안 됩니다.<br>
-                광고만 돌려도 안 됩니다.<br>
-                홈페이지만 만들어도 안 됩니다.
-            </p>
-            <div class="highlight-box">
-                모든 건 연결된 '매출 구조' 안에서 움직입니다.<br>
-                이 구조가 없으면 아무리 노력해도<br>매출은 우연에 맡겨집니다.
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. 해결 — 지은 대표님이 하는 일 -->
+    <!-- 해결 -->
     <section class="sec" style="background:var(--bg-dark); color:#fff;">
-        <div class="sec-inner">
-            <p style="font-size:0.8rem; font-weight:700; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">Solution</p>
-            <h2 style="font-size:1.5rem; font-weight:900; margin-bottom:24px; line-height:1.4;">
-                지은 대표님은 단순히<br>광고를 대신해주는 사람이 아닙니다.
-            </h2>
-            <p style="font-size:1.3rem; font-weight:900; color:var(--accent); margin-bottom:32px;">
-                매출이 만들어지는 '판'을 설계하는 사람입니다.
-            </p>
-            <div class="check-list">
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">현장 직접 방문</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">원장님의 막힌 지점 분석</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">고객 흐름(루트) 설계</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">콘텐츠 방향 설정</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">광고 구조 설계</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">홈페이지 구조 설계</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">운영 방식 정착</div>
+        <div class="inner">
+            <h2 style="font-size:1.5rem; font-weight:900; margin-bottom:24px; line-height:1.4;">지은 대표님이 하는 일</h2>
+            <div class="list">
+                <div class="list-item chk" style="background:rgba(255,255,255,0.05); color:#fff;">원장님의 막힌 지점 분석</div>
+                <div class="list-item chk" style="background:rgba(255,255,255,0.05); color:#fff;">고객이 들어오는 루트 설계</div>
+                <div class="list-item chk" style="background:rgba(255,255,255,0.05); color:#fff;">릴스 · 광고 · 홈페이지 직접 실행</div>
+                <div class="list-item chk" style="background:rgba(255,255,255,0.05); color:#fff;">지은 대표님 없어도 돌아가게 구조화</div>
             </div>
-            <p style="font-size:1.15rem; font-weight:800; text-align:center; margin-top:32px; color:var(--accent);">
-                그리고 가장 중요한 것.<br>
-                <span style="color:#fff;">지은 대표님이 없어도 돌아가게 만듭니다.</span>
+            <p style="text-align:center; font-size:1.1rem; font-weight:800; margin-top:32px; color:var(--accent);">
+                단순 대행이 아닙니다.<br><span style="color:#fff;">결과가 나올 때까지 구조를 다듬습니다.</span>
             </p>
         </div>
     </section>
 
-    <!-- 5. 차별화 — 대행사가 아닌 이유 -->
-    <section class="sec" style="background:#fff; border-bottom:1px solid var(--border);">
-        <div class="sec-inner">
-            <h2 class="story-title">그냥 대행사가 아닌 이유</h2>
-            <p class="story-text">
-                대부분 광고 대행은 이렇게 끝납니다.<br>
-                <strong>"광고는 돌렸습니다."</strong><br><br>
-                하지만 지은 대표님은 다릅니다.
+    <!-- 권위 + 감정 -->
+    <section class="sec" style="border-bottom:1px solid var(--border);">
+        <div class="inner" style="text-align:center;">
+            <h2 class="title">7년간 혼자 만든 결과,<br>이제는 원장님과 함께 만듭니다.</h2>
+            <p class="desc" style="text-align:center;">
+                혼자 브랜딩하고, 혼자 고객을 만들고, 혼자 살아남았습니다.<br>
+                그래서 압니다. 혼자 하는 게 얼마나 비효율적인지.
             </p>
-            <div class="check-list">
-                <div class="check-item">릴스 기획 · 촬영 · 편집</div>
-                <div class="check-item">메타 광고 세팅 및 집행</div>
-                <div class="check-item">홈페이지 제작</div>
-                <div class="check-item">운영 구조 정착</div>
-            </div>
-            <p class="story-text">
-                단순 대행이 아니라 <strong>실행까지 함께 합니다.</strong><br>
-                그리고 <strong>결과가 나올 때까지 구조를 다듬습니다.</strong>
-            </p>
-        </div>
-    </section>
-
-    <!-- 6. 권위 — 7년간 혼자 만든 결과 -->
-    <section class="sec" style="background:#FAFAFA; border-bottom:1px solid var(--border);">
-        <div class="sec-inner">
-            <h2 class="story-title">7년간 혼자 만든 결과</h2>
-            <p class="story-text">
-                지은 대표님은 지난 7년 동안<br>
-                누구 도움 없이 혼자 매출을 만들었습니다.
-            </p>
-            <p class="story-text">
-                혼자 브랜딩하고, 혼자 고객을 만들고,<br>
-                혼자 매출을 올리고, <strong>혼자 살아남았습니다.</strong>
-            </p>
-            <p class="story-text">
-                그래서 압니다.<br>
-                혼자 하는 게 얼마나 외로운지.<br>
-                그리고 <strong>얼마나 비효율적인지도.</strong>
-            </p>
-        </div>
-    </section>
-
-    <!-- 7. 감정 터치 -->
-    <section class="sec" style="background:#fff; border-bottom:1px solid var(--border);">
-        <div class="sec-inner">
-            <h2 class="story-title">혼자 버티지 않아도 됩니다.</h2>
-            <p class="story-text">
-                혼자서 성공하는 길은 있습니다.<br><br>
-                하지만 필요 이상으로 힘들 필요는 없습니다.
-            </p>
-            <p class="story-text">
-                이미 겪어본 사람이 있다면<br>
-                굳이 같은 길을 혼자 다시 걸을 필요는 없습니다.
-            </p>
-            <div class="pull-quote">
-                <p>현명한 사람은 시간을 줄입니다.<br>그리고 속도를 만듭니다.</p>
+            <div class="blue-box">
+                혼자 버티지 않아도 됩니다.<br>이미 겪어본 사람이 있으니까요.
             </div>
         </div>
     </section>
 
-    <!-- 8. 결과 구조 -->
-    <section class="sec" style="background:var(--bg-dark); color:#fff;">
-        <div class="sec-inner">
-            <h2 style="font-size:1.5rem; font-weight:900; margin-bottom:24px; line-height:1.4;">
-                결국 만들어지는 것
-            </h2>
-            <p style="font-size:1.05rem; color:rgba(255,255,255,0.5); line-height:2; margin-bottom:32px;">
-                실행메이킹을 통해 원장님이 얻게 되는 건<br>
-                단순한 광고가 아닙니다.<br>
-                <strong style="color:#fff;">'매출이 만들어지는 구조'</strong>입니다.
-            </p>
-            <div class="check-list">
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">지은 대표님이 없어도 돌아가는 시스템</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">광고가 끊기지 않는 구조</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">콘텐츠가 쌓이는 구조</div>
-                <div class="check-item" style="background:rgba(255,255,255,0.05); color:#fff;">고객이 이어지는 구조</div>
-            </div>
-            <p style="font-size:1.2rem; font-weight:900; text-align:center; margin-top:40px; line-height:1.6;">
-                이게 만들어지면<br>매출은 우연이 아니라<br><span style="color:var(--accent);">결과가 됩니다.</span>
-            </p>
-        </div>
-    </section>
-
-    <!-- 9. 탭 — 원데이 / 실행메이킹 -->
-    <section class="sec" style="background:#fff;">
-        <div class="sec-inner" style="text-align:center; margin-bottom:40px;">
+    <!-- 탭 -->
+    <section class="sec">
+        <div class="inner" style="text-align:center; margin-bottom:32px;">
             <p style="font-size:0.8rem; font-weight:700; color:var(--accent); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">Program</p>
-            <h2 class="story-title" style="margin-bottom:8px;">원장님에게 맞는 과정을 선택하세요</h2>
-            <p class="story-text" style="text-align:center;">두 과정 모두, 지은 대표님이 직접 진행합니다.</p>
+            <h2 class="title" style="margin-bottom:8px;">원장님에게 맞는 과정을 선택하세요</h2>
         </div>
-
-        <div class="tab-wrap">
+        <div style="max-width:700px; margin:0 auto; padding:0 24px;">
             <div class="tab-btns">
                 <button class="tab-btn active" onclick="switchTab('oneday')">원데이 컨설팅&대행</button>
                 <button class="tab-btn" onclick="switchTab('making')">실행메이킹 8주</button>
@@ -368,84 +165,54 @@
 
             <!-- 원데이 -->
             <div class="tab-content active" id="tab-oneday">
-                <div class="sec-inner">
-                    <span class="badge badge-blue">1:1 맞춤</span>
-                    <h2 class="story-title">하루 6시간, 원장님 샵의<br>판을 직접 짜드립니다</h2>
-                    <p class="story-text">
-                        지금 가장 급한 문제, 하루 안에 방향 잡고 실행까지.
-                        컨설팅으로 끝나는 게 아니라 직접 대행까지 해드립니다.
-                    </p>
-
-                    <div class="price-card">
-                        <p class="price-amount">1,200,000원</p>
-                        <p class="price-note">1일 6시간 · 1:1 컨설팅 + 대행</p>
-                    </div>
-
-                    <div class="info-grid">
-                        <div class="info-card"><p class="info-label">시간</p><p class="info-value">6시간</p></div>
-                        <div class="info-card"><p class="info-label">방식</p><p class="info-value">1:1 대면</p></div>
-                        <div class="info-card"><p class="info-label">포함</p><p class="info-value">컨설팅+대행</p></div>
-                        <div class="info-card"><p class="info-label">대상</p><p class="info-value">뷰티샵 원장님</p></div>
-                    </div>
-
-                    <h3 style="font-size:1.1rem; font-weight:800; margin-bottom:16px;">이런 분께 추천합니다</h3>
-                    <div class="check-list">
-                        <div class="check-item">매출이 정체되어 있어 돌파구가 필요한 분</div>
-                        <div class="check-item">마케팅 방향을 잡고 싶지만 혼자선 막막한 분</div>
-                        <div class="check-item">컨설팅만 받고 끝나는 게 아니라 바로 실행까지 원하는 분</div>
-                        <div class="check-item">긴 과정 없이 하루 만에 세팅을 끝내고 싶은 분</div>
-                    </div>
-
-                    <div class="highlight-box">
-                        컨설팅으로 방향 잡고,<br>그 자리에서 바로 실행합니다.
-                    </div>
+                <span class="badge" style="background:#e8eeff; color:var(--accent);">1:1 맞춤</span>
+                <h3 class="title">하루 6시간,<br>방향 잡고 바로 실행합니다</h3>
+                <div class="price-card">
+                    <p class="price-num">1,200,000원</p>
+                    <p class="price-sub">1일 6시간 · 1:1 컨설팅 + 대행</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card"><p class="l">시간</p><p class="v">6시간</p></div>
+                    <div class="info-card"><p class="l">방식</p><p class="v">1:1 대면</p></div>
+                    <div class="info-card"><p class="l">포함</p><p class="v">컨설팅+대행</p></div>
+                    <div class="info-card"><p class="l">대상</p><p class="v">뷰티샵 원장님</p></div>
+                </div>
+                <div class="list">
+                    <div class="list-item chk">매출 정체 돌파구가 필요한 분</div>
+                    <div class="list-item chk">방향은 잡고 싶은데 혼자선 막막한 분</div>
+                    <div class="list-item chk">하루 만에 세팅 끝내고 싶은 분</div>
                 </div>
             </div>
 
-            <!-- 실행메이킹 8주 -->
+            <!-- 실행메이킹 -->
             <div class="tab-content" id="tab-making">
-                <div class="sec-inner">
-                    <span class="badge badge-red">3기 · 6월 초 모집 예정</span>
-                    <h2 class="story-title">8주 동안 매출의 판을<br>완전히 바꿔드립니다</h2>
-                    <p class="story-text">
-                        릴스 기획, 광고 집행, 가격 전략, 브랜딩까지.
-                        8주 동안 1:1로 밀착해서 매출 구조를 함께 만듭니다.
-                    </p>
-
-                    <div class="price-card">
-                        <p class="price-amount">4,000,000원</p>
-                        <p class="price-note">8주 과정 · 실행메이킹 3기</p>
-                    </div>
-
-                    <div class="info-grid">
-                        <div class="info-card"><p class="info-label">기간</p><p class="info-value">8주</p></div>
-                        <div class="info-card"><p class="info-label">방식</p><p class="info-value">1:1 밀착</p></div>
-                        <div class="info-card"><p class="info-label">모집</p><p class="info-value">6월 초</p></div>
-                        <div class="info-card"><p class="info-label">정원</p><p class="info-value">소수 정예</p></div>
-                    </div>
-
-                    <h3 style="font-size:1.1rem; font-weight:800; margin-bottom:16px;">8주 동안 이런 걸 합니다</h3>
-                    <div class="check-list">
-                        <div class="check-item">매출 구조 분석 및 가격 전략 재설계</div>
-                        <div class="check-item">릴스 기획 · 촬영 · 편집 · 업로드</div>
-                        <div class="check-item">메타 광고 세팅 및 집행</div>
-                        <div class="check-item">네이버 블로그 상위노출 구조 세팅</div>
-                        <div class="check-item">브랜딩 방향 설계</div>
-                        <div class="check-item">주 1회 1:1 미팅 + 수시 피드백</div>
-                    </div>
-
-                    <div class="highlight-box">
-                        8주 후, 원장님 혼자서도<br>매출의 판이 돌아가는 구조를 만듭니다.
-                    </div>
+                <span class="badge" style="background:#ffe8e8; color:#FF4444;">3기 · 6월 초 모집</span>
+                <h3 class="title">8주 동안 매출의 판을<br>완전히 바꿔드립니다</h3>
+                <div class="price-card">
+                    <p class="price-num">4,000,000원</p>
+                    <p class="price-sub">8주 과정 · 실행메이킹 3기</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-card"><p class="l">기간</p><p class="v">8주</p></div>
+                    <div class="info-card"><p class="l">방식</p><p class="v">1:1 밀착</p></div>
+                    <div class="info-card"><p class="l">모집</p><p class="v">6월 초</p></div>
+                    <div class="info-card"><p class="l">정원</p><p class="v">소수 정예</p></div>
+                </div>
+                <div class="list">
+                    <div class="list-item chk">매출 구조 분석 + 가격 전략 재설계</div>
+                    <div class="list-item chk">릴스 기획 · 촬영 · 편집 · 업로드</div>
+                    <div class="list-item chk">메타 광고 세팅 및 집행</div>
+                    <div class="list-item chk">블로그 상위노출 구조 세팅</div>
+                    <div class="list-item chk">주 1회 1:1 미팅 + 수시 피드백</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 10. CTA -->
-    <section class="cta-section">
-        <h2 class="cta-title">혼자 계속 고민할지,<br>판을 새로 짤지.</h2>
-        <p class="cta-desc">선택은 원장님의 몫입니다.<br>상담은 무료입니다.</p>
+    <!-- CTA -->
+    <section class="cta-sec">
+        <h2>혼자 고민할지,<br>판을 새로 짤지.</h2>
+        <p>상담은 무료입니다.</p>
         <a href="https://open.kakao.com/" target="_blank" class="cta-btn">무료 상담 신청 →</a>
     </section>
 
