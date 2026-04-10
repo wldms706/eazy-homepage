@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // google: "여기에-구글-인증-코드",
+    google: "66jzBtfBr3vxbyU5lD-wigqrdbS-cx7wF9hDF7l46Gg",
     other: {
       "naver-site-verification": "9aadb4d968f47074d3f9006471a40048baac342b",
     },
