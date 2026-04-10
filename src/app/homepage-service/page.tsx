@@ -1,11 +1,29 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "검색되는 홈페이지 구축 | EAZY",
-  description: "뷰티샵 원장님을 위한 마케팅 시스템",
+  title: "뷰티샵 홈페이지 만들기 - 네이버 검색되는 살롱 홈페이지",
+  description:
+    "네일샵·반영구·피부관리실 원장님을 위한 뷰티샵 홈페이지 만들기. 네이버 검색 잘 되는 1인샵 홈페이지, 모바일 반응형, 예약·문의까지 한 번에.",
+  keywords: [
+    "뷰티샵 홈페이지 만들기",
+    "네일샵 홈페이지",
+    "네일샵 홈페이지 만들기",
+    "반영구 홈페이지",
+    "반영구 홈페이지 만들기",
+    "피부관리실 홈페이지",
+    "피부관리실 홈페이지 만들기",
+    "1인샵 홈페이지",
+    "소규모 매장 홈페이지",
+    "살롱 홈페이지",
+  ],
+  alternates: {
+    canonical: "https://www.jjeen-eazy.com/homepage-service",
+  },
   openGraph: {
-    title: "EAZY - 찐이지 시스템",
-    description: "뷰티샵 원장님을 위한 마케팅 시스템",
+    title: "뷰티샵 홈페이지 만들기 - 네이버 검색되는 살롱 홈페이지",
+    description:
+      "네이버 검색 잘 되는 1인샵 홈페이지 만들기. 모바일 반응형, 예약·문의까지.",
+    url: "https://www.jjeen-eazy.com/homepage-service",
     images: ["https://www.jjeen-eazy.com/about-hero.png"],
     type: "website",
   },

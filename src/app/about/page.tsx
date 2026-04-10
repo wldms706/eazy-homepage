@@ -1,11 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "소개 | EAZY",
-  description: "뷰티샵 원장님을 위한 마케팅 시스템",
+  title: "찐이지 EAZY 소개 - 7년차 뷰티샵 마케팅 전문가 지은",
+  description:
+    "네이버 블로그 7년 운영, 월 평균 매출 2000만원, 100명+ 원장님 교육. 뷰티샵 원장님을 위한 마케팅 시스템 '찐이지 EAZY'를 만드는 지은 원장의 이야기.",
+  keywords: [
+    "찐이지",
+    "EAZY",
+    "지은 원장",
+    "뷰티샵 마케팅 전문가",
+    "네이버 블로그 7년",
+    "살롱 마케팅 코칭",
+  ],
+  alternates: {
+    canonical: "https://www.jjeen-eazy.com/about",
+  },
   openGraph: {
-    title: "EAZY - 찐이지 시스템",
-    description: "뷰티샵 원장님을 위한 마케팅 시스템",
+    title: "찐이지 EAZY 소개 - 뷰티샵 마케팅 전문가 지은",
+    description:
+      "7년차 뷰티샵 마케팅 전문가가 만드는 1인샵 원장님을 위한 마케팅 시스템.",
+    url: "https://www.jjeen-eazy.com/about",
     images: ["https://www.jjeen-eazy.com/about-hero.png"],
     type: "website",
   },

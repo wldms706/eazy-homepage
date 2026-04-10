@@ -2,11 +2,32 @@ import type { Metadata } from "next";
 import CoachingTabs from "./CoachingTabs";
 
 export const metadata: Metadata = {
-  title: "코칭&대행 | EAZY",
-  description: "매출의 판을 짜는 실행메이킹",
+  title: "뷰티샵 코칭&대행 - 손님 늘리기·릴스·광고 도와드려요",
+  description:
+    "네일샵·반영구·피부관리실 원장님을 위한 1:1 코칭과 대행. 손님 늘리는 법, 릴스 만들기, 메타광고까지. 매출의 판을 짜는 실행메이킹.",
+  keywords: [
+    "뷰티샵 손님 늘리는 법",
+    "네일샵 손님 늘리는 법",
+    "반영구 손님 안와요",
+    "반영구 손님 늘리기",
+    "피부관리실 매출",
+    "피부관리실 손님 늘리기",
+    "1인샵 매출 올리기",
+    "1인샵 마케팅 배우기",
+    "뷰티샵 릴스 만들기",
+    "네일샵 릴스",
+    "뷰티샵 광고",
+    "네일샵 인스타 광고",
+    "1인샵 컨설팅",
+  ],
+  alternates: {
+    canonical: "https://www.jjeen-eazy.com/coaching",
+  },
   openGraph: {
-    title: "코칭&대행 | EAZY",
-    description: "매출의 판을 짜는 실행메이킹",
+    title: "뷰티샵 코칭&대행 - 손님 늘리기·릴스·광고",
+    description:
+      "원장님 손님 늘리는 법, 릴스, 광고까지. 매출의 판을 짜는 실행메이킹.",
+    url: "https://www.jjeen-eazy.com/coaching",
     images: ["https://www.jjeen-eazy.com/about-hero.png"],
     type: "website",
   },

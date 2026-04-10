@@ -2,11 +2,34 @@ import type { Metadata } from "next";
 import { CounterAnimation, ReviewImageSlider, FloatingCTA } from "./BlogwriterClient";
 
 export const metadata: Metadata = {
-  title: "블로그라이터 | EAZY",
-  description: "3분 만에 네이버 상위노출 블로그 글 완성. GPT보다 빠르고, 결과가 다릅니다.",
+  title: "블로그라이터 - 뷰티샵 블로그·네이버 홍보 자동 글쓰기",
+  description:
+    "뷰티샵 블로그 글, 3분이면 끝. 네일샵·반영구·피부관리실 원장님을 위한 네이버 블로그 자동 글쓰기 도구. 배우지 마세요. 그냥 쓰세요.",
+  keywords: [
+    "뷰티샵 블로그",
+    "뷰티샵 네이버 홍보",
+    "네일샵 블로그",
+    "네일샵 블로그 글쓰기",
+    "반영구 블로그",
+    "반영구 네이버 홍보",
+    "피부관리실 블로그",
+    "피부관리실 네이버 홍보",
+    "왁싱샵 블로그",
+    "헤어샵 블로그",
+    "네이버 블로그 글쓰기",
+    "네이버 블로그 자동",
+    "블로그 글 자동 작성",
+    "블로그 글쓰기 어려워",
+    "블로그라이터",
+  ],
+  alternates: {
+    canonical: "https://www.jjeen-eazy.com/blogwriter",
+  },
   openGraph: {
-    title: "EAZY - 찐이지 시스템",
-    description: "뷰티샵 원장님을 위한 마케팅 시스템",
+    title: "블로그라이터 - 뷰티샵 블로그 3분 만에 완성",
+    description:
+      "네일샵·반영구·피부관리실 원장님을 위한 네이버 블로그 자동 글쓰기. 배우지 마세요. 그냥 쓰세요.",
+    url: "https://www.jjeen-eazy.com/blogwriter",
     images: ["https://www.jjeen-eazy.com/about-hero.png"],
     type: "website",
   },
