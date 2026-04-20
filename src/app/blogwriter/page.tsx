@@ -278,10 +278,6 @@ export default function BlogwriterPage() {
                 <span className="counter-label">생성된 글</span>
               </div>
               <div className="counter-item">
-                <span className="counter-num">320+</span>
-                <span className="counter-label">사용 중인 원장님</span>
-              </div>
-              <div className="counter-item">
                 <span className="counter-num">3분</span>
                 <span className="counter-label">평균 작성 시간</span>
               </div>
