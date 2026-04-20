@@ -488,6 +488,9 @@ export default function Home() {
             </p>
           </div>
           <div className="footer-bottom">
+            <p style={{ marginBottom: 8 }}>
+              <a href="/refund-policy" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'underline', fontSize: '0.85rem' }}>환불 규정</a>
+            </p>
             <p>&copy; 2026 EAZY. All rights reserved.</p>
           </div>
         </div>
