@@ -223,15 +223,16 @@ export default function ResourcesPage() {
                 <span className="resource-btn" style={{ background: '#FF0000' }}>강의 보러가기 &rarr;</span>
               </div>
             </a>
-            <a href="/guides/meta-ad" className="resource-card">
+            <a href="/products/meta-ad-class" className="resource-card">
               <div style={{ padding: '40px', background: 'var(--bg-dark)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--border)' }}>
                 <span style={{ fontSize: '2rem', fontWeight: 900, color: '#fff', letterSpacing: '-1px' }}>META ADS</span>
               </div>
               <div className="resource-info">
-                <span className="resource-badge" style={{ background: '#FF0000' }}>무료 영상</span>
+                <span className="resource-badge" style={{ background: '#2A5FFF' }}>유료 강의</span>
                 <h3 className="resource-name">메타광고 계정 만들기</h3>
-                <p className="resource-desc">뷰티샵 원장님을 위한 메타광고 계정 세팅 가이드. 정보 입력 후 시청 가능합니다.</p>
-                <span className="resource-btn" style={{ background: 'var(--bg-dark)' }}>영상 보러가기 &rarr;</span>
+                <p className="resource-desc">뷰티샵 원장님을 위한 메타광고 계정 세팅 가이드. 평생 소장 · 무제한 시청.</p>
+                <p style={{ fontSize: '1.1rem', fontWeight: 900, color: 'var(--text)', margin: '8px 0 12px' }}>9,900<span style={{ fontSize: '0.85rem', fontWeight: 600 }}>원</span></p>
+                <span className="resource-btn" style={{ background: 'var(--bg-dark)' }}>구매하고 시청하기 &rarr;</span>
               </div>
             </a>
           </div>
