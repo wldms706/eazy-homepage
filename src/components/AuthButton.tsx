@@ -31,22 +31,31 @@ export default function AuthButton() {
 
   if (loading) return null;
 
+  const baseStyle = {
+    fontSize: '0.85rem',
+    fontWeight: 600,
+    color: '#fff',
+    background: 'rgba(255,255,255,0.08)',
+    border: '1px solid rgba(255,255,255,0.2)',
+    borderRadius: '8px',
+    padding: '8px 16px',
+    cursor: 'pointer',
+    textDecoration: 'none',
+    fontFamily: 'inherit',
+    transition: 'background 0.2s',
+    whiteSpace: 'nowrap' as const,
+  };
+
   if (user) {
     return (
-      <button
-        onClick={handleLogout}
-        style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
-      >
+      <button onClick={handleLogout} style={baseStyle}>
         로그아웃
       </button>
     );
   }
 
   return (
-    <Link
-      href="/login"
-      style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}
-    >
+    <Link href="/login" style={baseStyle}>
       로그인
     </Link>
   );
