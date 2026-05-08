@@ -231,7 +231,7 @@ export default function Home() {
                 <h3>코칭&대행</h3>
                 <p className="product-desc">
                   원장님 샵의 판 설계를 직접 세팅합니다. 릴스, 광고, 가격
-                  전략까지 8주간 1:1 실행메이킹.
+                  전략까지 12주간 1:1 실행메이킹.
                 </p>
                 <div className="product-meta">
                   <span className="product-tag">판 설계</span>
