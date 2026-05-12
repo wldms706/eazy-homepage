@@ -115,56 +115,6 @@ export default function CoachingPage() {
           </div>
         </section>
 
-        {/* 공감 + 문제 */}
-        <section className="sec" style={{ borderBottom: '1px solid var(--border)' }}>
-          <div className="inner">
-            <h2 className="title">이런 상황 아니신가요?</h2>
-            <div className="list">
-              <div className="list-item dot">광고 돌렸는데 문의가 없다</div>
-              <div className="list-item dot">문의는 오는데 예약이 안 된다</div>
-              <div className="list-item dot">예약은 되는데 매출이 안 오른다</div>
-              <div className="list-item dot">릴스, 블로그, 광고 — 뭘 해야 할지 모르겠다</div>
-            </div>
-            <div className="dark-box">
-              릴스만 찍어도, 광고만 돌려도, 홈페이지만 만들어도 안 됩니다.<br />
-              모든 건 연결된 <em>매출 구조</em> 안에서 움직입니다.
-            </div>
-          </div>
-        </section>
-
-        {/* 해결 */}
-        <section className="sec" style={{ background: 'var(--bg-dark)', color: '#fff' }}>
-          <div className="inner">
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '24px', lineHeight: 1.4 }}>저희가 하는 일</h2>
-            <div className="list">
-              <div className="list-item chk" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>원장님의 막힌 지점 분석</div>
-              <div className="list-item chk" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>고객이 들어오는 루트 설계</div>
-              <div className="list-item chk" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>릴스 &middot; 광고 &middot; 홈페이지 직접 실행</div>
-              <div className="list-item chk" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>EAZY 없어도 돌아가게 구조화</div>
-            </div>
-            <p style={{ textAlign: 'center', fontSize: '1.1rem', fontWeight: 800, marginTop: '32px', color: 'var(--accent)' }}>
-              단순 대행이 아닙니다.<br /><span style={{ color: '#fff' }}>결과가 나올 때까지 구조를 다듬습니다.</span>
-            </p>
-          </div>
-        </section>
-
-        {/* 권위 + 감정 */}
-        <section className="sec" style={{ borderBottom: '1px solid var(--border)' }}>
-          <div className="inner" style={{ textAlign: 'center' }}>
-            <h2 className="title">7년간 혼자 만든 결과,<br />이제는 원장님과 함께 만듭니다.</h2>
-            <p className="desc" style={{ textAlign: 'center' }}>
-              혼자 브랜딩하고, 혼자 고객을 만들고, 혼자 살아남았습니다.<br />
-              그래서 압니다. 혼자 하는 게 얼마나 비효율적인지.
-            </p>
-            <div className="blue-box">
-              혼자 버티지 않아도 됩니다.<br />이미 겪어본 사람이 있으니까요.
-            </div>
-          </div>
-        </section>
-
-        {/* 탭 */}
-        <CoachingTabs />
-
         {/* 원장님 성과 */}
         <section className="sec" style={{ background: 'var(--bg-dark)', color: '#fff' }}>
           <div className="inner">
@@ -260,6 +210,56 @@ export default function CoachingPage() {
             <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', textAlign: 'center', marginTop: '24px' }}>※ 모든 후기는 실제 카카오톡 대화 캡쳐이며, 개인정보 보호를 위해 일부만 공개합니다.</p>
           </div>
         </section>
+
+        {/* 공감 + 문제 */}
+        <section className="sec" style={{ borderBottom: '1px solid var(--border)' }}>
+          <div className="inner">
+            <h2 className="title">이런 상황 아니신가요?</h2>
+            <div className="list">
+              <div className="list-item dot">광고 돌렸는데 문의가 없다</div>
+              <div className="list-item dot">문의는 오는데 예약이 안 된다</div>
+              <div className="list-item dot">예약은 되는데 매출이 안 오른다</div>
+              <div className="list-item dot">릴스, 블로그, 광고 — 뭘 해야 할지 모르겠다</div>
+            </div>
+            <div className="dark-box">
+              릴스만 찍어도, 광고만 돌려도, 홈페이지만 만들어도 안 됩니다.<br />
+              모든 건 연결된 <em>매출 구조</em> 안에서 움직입니다.
+            </div>
+          </div>
+        </section>
+
+        {/* 해결 */}
+        <section className="sec" style={{ background: 'var(--bg-dark)', color: '#fff' }}>
+          <div className="inner">
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '24px', lineHeight: 1.4 }}>저희가 하는 일</h2>
+            <div className="list">
+              <div className="list-item chk" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>원장님의 막힌 지점 분석</div>
+              <div className="list-item chk" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>고객이 들어오는 루트 설계</div>
+              <div className="list-item chk" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>릴스 &middot; 광고 &middot; 홈페이지 직접 실행</div>
+              <div className="list-item chk" style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>EAZY 없어도 돌아가게 구조화</div>
+            </div>
+            <p style={{ textAlign: 'center', fontSize: '1.1rem', fontWeight: 800, marginTop: '32px', color: 'var(--accent)' }}>
+              단순 대행이 아닙니다.<br /><span style={{ color: '#fff' }}>결과가 나올 때까지 구조를 다듬습니다.</span>
+            </p>
+          </div>
+        </section>
+
+        {/* 권위 + 감정 */}
+        <section className="sec" style={{ borderBottom: '1px solid var(--border)' }}>
+          <div className="inner" style={{ textAlign: 'center' }}>
+            <h2 className="title">7년간 혼자 만든 결과,<br />이제는 원장님과 함께 만듭니다.</h2>
+            <p className="desc" style={{ textAlign: 'center' }}>
+              혼자 브랜딩하고, 혼자 고객을 만들고, 혼자 살아남았습니다.<br />
+              그래서 압니다. 혼자 하는 게 얼마나 비효율적인지.
+            </p>
+            <div className="blue-box">
+              혼자 버티지 않아도 됩니다.<br />이미 겪어본 사람이 있으니까요.
+            </div>
+          </div>
+        </section>
+
+        {/* 탭 */}
+        <CoachingTabs />
 
         {/* CTA */}
         <section className="cta-sec">
