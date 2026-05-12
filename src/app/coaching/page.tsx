@@ -238,6 +238,7 @@ export default function CoachingPage() {
                 { src: '/coaching-videos/mandzhandz.mp4', name: 'B 원장님', blur: true },
                 { src: '/coaching-videos/orda.mp4', name: 'C 원장님', blur: true },
                 { src: '/coaching-videos/daehang.mp4', name: 'D 원장님', blur: false },
+                { src: '/coaching-videos/coach-new.mp4', name: 'E 원장님', blur: false },
               ].map((v) => (
                 <div key={v.src} style={{ borderRadius: '12px', overflow: 'hidden', background: '#000', position: 'relative' }}>
                   <video
