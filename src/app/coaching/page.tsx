@@ -211,19 +211,55 @@ export default function CoachingPage() {
           </div>
         </section>
 
-        {/* 공감 + 문제 */}
-        <section className="sec" style={{ borderBottom: '1px solid var(--border)' }}>
-          <div className="inner">
-            <h2 className="title">이런 상황 아니신가요?</h2>
-            <div className="list">
-              <div className="list-item dot">광고 돌렸는데 문의가 없다</div>
-              <div className="list-item dot">문의는 오는데 예약이 안 된다</div>
-              <div className="list-item dot">예약은 되는데 매출이 안 오른다</div>
-              <div className="list-item dot">릴스, 블로그, 광고 — 뭘 해야 할지 모르겠다</div>
+        {/* 공감 + 문제 - 카드뉴스 스타일 */}
+        <section className="sec" style={{ background: 'linear-gradient(180deg, #fff 0%, #E8E8E8 100%)', padding: '80px 24px', borderBottom: '1px solid var(--border)' }}>
+          <div className="inner" style={{ maxWidth: '420px', textAlign: 'center' }}>
+            <p style={{ fontSize: '1.3rem', fontWeight: 500, color: 'var(--text)', marginBottom: '16px' }}>마케팅이요?</p>
+            <div style={{ fontSize: '4rem', marginBottom: '24px', lineHeight: 1 }}>😅</div>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 500, lineHeight: 1.5, color: 'var(--text)', marginBottom: '48px' }}>
+              저는 마케팅 잘 모르는데,<br />
+              <strong style={{ fontWeight: 900 }}>괜찮을까요?</strong>
+            </h2>
+
+            {/* 말풍선들 */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '48px' }}>
+              {/* 좌측 말풍선 */}
+              <div style={{ alignSelf: 'flex-start', maxWidth: '75%', background: '#1a1a1a', color: '#fff', padding: '14px 20px', borderRadius: '20px 20px 20px 4px', fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.5, textAlign: 'left' }}>
+                광고 돌렸는데<br /><span style={{ color: '#7AB8FF' }}>문의가 안 와요</span>
+              </div>
+              {/* 우측 말풍선 */}
+              <div style={{ alignSelf: 'flex-end', maxWidth: '75%', background: '#1a1a1a', color: '#fff', padding: '14px 20px', borderRadius: '20px 20px 4px 20px', fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.5, textAlign: 'left' }}>
+                릴스 만들 줄도<br /><span style={{ color: '#7AB8FF' }}>모르겠어요</span>
+              </div>
+              {/* 좌측 */}
+              <div style={{ alignSelf: 'flex-start', maxWidth: '75%', background: '#1a1a1a', color: '#fff', padding: '14px 20px', borderRadius: '20px 20px 20px 4px', fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.5, textAlign: 'left' }}>
+                강의 들어봐도<br /><span style={{ color: '#7AB8FF' }}>실행이 안 돼요</span>
+              </div>
+              {/* 우측 */}
+              <div style={{ alignSelf: 'flex-end', maxWidth: '75%', background: '#1a1a1a', color: '#fff', padding: '14px 20px', borderRadius: '20px 20px 4px 20px', fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.5, textAlign: 'left' }}>
+                시술하느라<br /><span style={{ color: '#7AB8FF' }}>시간이 없어요</span>
+              </div>
             </div>
+
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 500, lineHeight: 1.5, color: 'var(--text)' }}>
+              과연 원장님이<br />
+              <strong style={{ fontWeight: 900 }}>특별해서</strong> 그랬을까요?
+            </h3>
+          </div>
+        </section>
+
+        {/* 해답 시작 */}
+        <section className="sec" style={{ background: '#fff' }}>
+          <div className="inner" style={{ textAlign: 'center' }}>
+            <p style={{ fontSize: '1.1rem', color: 'var(--text-sub)', lineHeight: 2, marginBottom: '24px' }}>
+              아니에요. 🙅‍♀️
+            </p>
+            <h2 className="title" style={{ marginBottom: '16px' }}>
+              릴스만 찍어도, 광고만 돌려도,<br />
+              홈페이지만 만들어도 안 됩니다.
+            </h2>
             <div className="dark-box">
-              릴스만 찍어도, 광고만 돌려도, 홈페이지만 만들어도 안 됩니다.<br />
-              모든 건 연결된 <em>매출 구조</em> 안에서 움직입니다.
+              모든 건 연결된 <em>매출 구조</em> 안에서<br />움직여야 작동합니다.
             </div>
           </div>
         </section>
