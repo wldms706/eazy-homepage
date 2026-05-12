@@ -115,50 +115,61 @@ export default function CoachingPage() {
           </div>
         </section>
 
-        {/* 권위 - 케이스 카드 3개 */}
-        <section className="sec" style={{ background: '#fff' }}>
-          <div className="inner">
-            <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center' }}>Proven Results</p>
-            <h2 className="title" style={{ textAlign: 'center', marginBottom: '8px' }}>
-              결과가 말해줍니다
+        {/* 권위 - 카드뉴스 스타일 */}
+        <section className="sec" style={{ background: 'linear-gradient(180deg, #fff 0%, #EBF1FF 100%)', padding: '80px 24px' }}>
+          <div className="inner" style={{ maxWidth: '460px', textAlign: 'center' }}>
+            <div style={{ fontSize: '3.5rem', marginBottom: '8px', lineHeight: 1 }}>📈</div>
+            <h2 style={{ fontSize: '2rem', fontWeight: 900, lineHeight: 1.3, color: 'var(--text)', marginBottom: '12px' }}>
+              결과가<br />
+              <span style={{ background: 'linear-gradient(90deg, #2A5FFF, #5B82FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>말해줍니다.</span>
             </h2>
-            <p className="desc" style={{ textAlign: 'center', marginBottom: '40px' }}>
-              단 2시간 코칭만으로도 매출이 오르고,<br />12주 후엔 매출 구조가 완전히 바뀝니다.
+            <p style={{ fontSize: '1rem', color: 'var(--text-sub)', lineHeight: 1.8, marginBottom: '48px' }}>
+              단 <strong style={{ color: 'var(--text)' }}>2시간 코칭</strong>만으로도 매출이 오르고,<br />
+              <strong style={{ color: 'var(--text)' }}>12주 후</strong>엔 매출 구조가 완전히 바뀝니다.
             </p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              {/* CASE 1 */}
-              <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '20px', padding: '28px 24px', color: '#fff' }}>
-                <p style={{ fontSize: '0.75rem', fontWeight: 700, opacity: 0.7, letterSpacing: '1px', marginBottom: '10px' }}>CASE 1</p>
-                <p style={{ fontSize: '1rem', opacity: 0.9, marginBottom: '12px' }}>12주 그룹 코칭 후</p>
-                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, lineHeight: 1.4 }}>
-                  매출 <span style={{ fontSize: '2.4rem' }}>4.3배</span> 상승<br />
-                  <span style={{ fontSize: '1rem', fontWeight: 600, opacity: 0.85 }}>월 140만원 → 600만원</span>
-                </h3>
-              </div>
-
-              {/* CASE 2 */}
-              <div style={{ background: '#1a1a1a', borderRadius: '20px', padding: '28px 24px', color: '#fff' }}>
-                <p style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '1px', marginBottom: '10px' }}>CASE 2</p>
-                <p style={{ fontSize: '1rem', opacity: 0.7, marginBottom: '12px' }}>단 2시간 1:1 코칭만으로</p>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, lineHeight: 1.5 }}>
-                  릴스 돌려서 <span style={{ color: 'var(--accent)' }}>매출 상승</span>
-                </h3>
-              </div>
-
-              {/* CASE 3 */}
-              <div style={{ background: '#F0F4FF', border: '1px solid #C8D6FF', borderRadius: '20px', padding: '28px 24px' }}>
-                <p style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '1px', marginBottom: '10px' }}>CASE 3</p>
-                <p style={{ fontSize: '1rem', color: 'var(--text-sub)', marginBottom: '12px' }}>번아웃으로 매출 뚝 → </p>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, lineHeight: 1.5, color: 'var(--text)' }}>
-                  수강 매출 <span style={{ color: 'var(--accent)' }}>1,800만원</span> 회복
-                </h3>
+            {/* CASE 1 - 큰 임팩트 카드 */}
+            <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '24px', padding: '36px 28px', color: '#fff', marginBottom: '16px', boxShadow: '0 20px 50px rgba(42,95,255,0.3)' }}>
+              <p style={{ fontSize: '0.8rem', fontWeight: 700, opacity: 0.8, letterSpacing: '2px', marginBottom: '20px' }}>CASE 1 · 12주 그룹 코칭</p>
+              <p style={{ fontSize: '5rem', fontWeight: 900, lineHeight: 1, marginBottom: '8px' }}>
+                4.3<span style={{ fontSize: '2.5rem' }}>배</span>
+              </p>
+              <p style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '24px' }}>매출이 상승했습니다</p>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', background: 'rgba(0,0,0,0.25)', borderRadius: '14px', padding: '14px 20px' }}>
+                <span style={{ fontSize: '0.95rem', textDecoration: 'line-through', opacity: 0.6 }}>월 140만원</span>
+                <span style={{ fontSize: '1.2rem' }}>→</span>
+                <span style={{ fontSize: '1.2rem', fontWeight: 900 }}>월 600만원</span>
               </div>
             </div>
 
-            <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', textAlign: 'center', marginTop: '24px' }}>
-              ※ 소수 정예 1:1 밀착 프로그램 — 한 기수당 5명 미만 운영
-            </p>
+            {/* CASE 2 - 짧고 강하게 */}
+            <div style={{ background: '#1a1a1a', borderRadius: '24px', padding: '28px 24px', color: '#fff', marginBottom: '16px', textAlign: 'left' }}>
+              <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', marginBottom: '12px' }}>CASE 2 · 단 2시간 1:1 코칭</p>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 900, lineHeight: 1.5 }}>
+                딱 2시간 만났는데<br />
+                <span style={{ color: 'var(--accent)' }}>릴스 한 개로</span><br />
+                매출이 올랐어요.
+              </h3>
+            </div>
+
+            {/* CASE 3 - 카톡 말풍선 스타일 */}
+            <div style={{ background: '#fff', borderRadius: '24px', padding: '28px 24px', boxShadow: '0 8px 24px rgba(0,0,0,0.06)', border: '1px solid #E0E8FF', textAlign: 'left' }}>
+              <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', marginBottom: '12px' }}>CASE 3 · 수강 원장님</p>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 900, lineHeight: 1.5, marginBottom: '16px', color: 'var(--text)' }}>
+                번아웃으로 매출 뚝 →<br />
+                <span style={{ background: 'linear-gradient(120deg, #2A5FFF, #5B82FF)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>1,800만원 회복</span>
+              </h3>
+              <div style={{ background: '#1a1a1a', color: '#fff', padding: '14px 18px', borderRadius: '16px 16px 16px 4px', fontSize: '0.9rem', lineHeight: 1.6 }}>
+                &ldquo;알고리즘 바뀌고 번아웃 와서 매출 뚝 떨어졌는데,
+                지은 대표님 만나고 다시 <strong style={{ color: '#7AB8FF' }}>월 1,800만원</strong> 찍었어요.&rdquo;
+              </div>
+            </div>
+
+            <div style={{ marginTop: '32px', padding: '16px 20px', background: '#fff', borderRadius: '100px', border: '1px solid var(--border)', display: 'inline-block' }}>
+              <p style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-sub)' }}>
+                🤝 한 기수당 <strong style={{ color: 'var(--accent)' }}>5명 미만</strong> · 소수 정예 밀착
+              </p>
+            </div>
           </div>
         </section>
 
