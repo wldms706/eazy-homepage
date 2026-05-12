@@ -267,7 +267,17 @@ export default function BlogwriterPage() {
               <div style={{ marginBottom: '16px' }}>
                 <span style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>월 19,900원</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FF4444', marginLeft: '8px' }}>SALE 월 9,900원</span>
-                <p style={{ fontSize: '0.85rem', fontWeight: 700, color: '#FFD700', marginTop: '6px' }}>🔥 선착순 100명 한정</p>
+              </div>
+              <div style={{ background: 'rgba(255, 68, 68, 0.15)', border: '1px solid rgba(255, 68, 68, 0.4)', borderRadius: '12px', padding: '14px 18px', marginBottom: '20px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#FFD700' }}>🔥 선착순 100명 한정</span>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>
+                    남은 자리 <span style={{ fontSize: '1.2rem', color: '#FFD700' }}>64</span>명
+                  </span>
+                </div>
+                <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.1)', borderRadius: '999px', overflow: 'hidden' }}>
+                  <div style={{ width: '36%', height: '100%', background: 'linear-gradient(90deg, #FF4444 0%, #FFD700 100%)', borderRadius: '999px' }}></div>
+                </div>
               </div>
               <a href="https://www.blogwriter.co.kr" target="_blank" rel="noopener noreferrer" className="btn-main">무료로 3번 써보기 &rarr;</a>
               <span className="hero-note">가입 즉시 &middot; 카드 등록 없음 &middot; 베타 한정 가격</span>
@@ -511,8 +521,18 @@ export default function BlogwriterPage() {
             <div style={{ margin: '32px 0' }}>
               <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>월 19,900원</span>
               <span style={{ display: 'block', fontSize: '2.2rem', fontWeight: 900, color: '#FF4444', marginTop: '4px' }}>SALE 월 9,900원</span>
-              <span style={{ display: 'block', fontSize: '1rem', fontWeight: 700, color: '#FFD700', marginTop: '8px' }}>🔥 선착순 100명 한정</span>
               <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>베타 기간 한정 가격</span>
+              <div style={{ background: 'rgba(255, 68, 68, 0.15)', border: '1px solid rgba(255, 68, 68, 0.4)', borderRadius: '12px', padding: '14px 18px', marginTop: '16px', maxWidth: '360px', marginLeft: 'auto', marginRight: 'auto' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#FFD700' }}>🔥 선착순 100명 한정</span>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>
+                    남은 자리 <span style={{ fontSize: '1.2rem', color: '#FFD700' }}>64</span>명
+                  </span>
+                </div>
+                <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.1)', borderRadius: '999px', overflow: 'hidden' }}>
+                  <div style={{ width: '36%', height: '100%', background: 'linear-gradient(90deg, #FF4444 0%, #FFD700 100%)', borderRadius: '999px' }}></div>
+                </div>
+              </div>
             </div>
             <a href="https://www.blogwriter.co.kr" target="_blank" rel="noopener noreferrer" className="btn-main">무료로 3번 써보기 &rarr;</a>
             <p className="cta-note">가입 즉시 하루 3회 무료 생성 &middot; 카드 등록 없음</p>
