@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CounterAnimation, ReviewImageSlider, FloatingCTA } from "./BlogwriterClient";
+import SlotCounter from "./SlotCounter";
 
 export const metadata: Metadata = {
   title: "블로그라이터 - 뷰티샵 블로그·네이버 홍보 자동 글쓰기",
@@ -268,17 +269,7 @@ export default function BlogwriterPage() {
                 <span style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>월 19,900원</span>
                 <span style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FF4444', marginLeft: '8px' }}>SALE 월 9,900원</span>
               </div>
-              <div style={{ background: 'rgba(255, 68, 68, 0.15)', border: '1px solid rgba(255, 68, 68, 0.4)', borderRadius: '12px', padding: '14px 18px', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#FFD700' }}>🔥 선착순 100명 한정</span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>
-                    남은 자리 <span style={{ fontSize: '1.2rem', color: '#FFD700' }}>64</span>명
-                  </span>
-                </div>
-                <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.1)', borderRadius: '999px', overflow: 'hidden' }}>
-                  <div style={{ width: '36%', height: '100%', background: 'linear-gradient(90deg, #FF4444 0%, #FFD700 100%)', borderRadius: '999px' }}></div>
-                </div>
-              </div>
+              <SlotCounter variant="hero" />
               <a href="https://www.blogwriter.co.kr" target="_blank" rel="noopener noreferrer" className="btn-main">무료로 3번 써보기 &rarr;</a>
               <span className="hero-note">가입 즉시 &middot; 카드 등록 없음 &middot; 베타 한정 가격</span>
             </div>
@@ -477,6 +468,59 @@ export default function BlogwriterPage() {
           </div>
         </section>
 
+        {/* 9-1. AI 티난다는 우려에 대한 솔직한 답변 */}
+        <section className="section" style={{ background: '#1a1a1a', color: '#fff', padding: '100px 24px', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+          <div className="section-inner" style={{ maxWidth: '720px' }}>
+            <p style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center' }}>Real Talk</p>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.2rem)', fontWeight: 900, lineHeight: 1.4, textAlign: 'center', marginBottom: '40px' }}>
+              &ldquo;AI 티난다고요?&rdquo;<br />
+              <span style={{ color: 'var(--accent)' }}>GPT도 티납니다.</span>
+            </h2>
+
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '32px 28px', marginBottom: '24px' }}>
+              <p style={{ fontSize: '1.1rem', lineHeight: 2, color: 'rgba(255,255,255,0.95)' }}>
+                솔직히 말씀드릴게요.<br />
+                <strong style={{ fontWeight: 900 }}>블로그 글은 상위노출되기 위함이에요.</strong>
+              </p>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
+              <div style={{ background: 'rgba(42,95,255,0.15)', borderLeft: '3px solid var(--accent)', borderRadius: '12px', padding: '20px 24px' }}>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '4px' }}>현실 1</p>
+                <p style={{ fontSize: '1rem', fontWeight: 600, lineHeight: 1.8 }}>
+                  고객님들은 글보다 <strong style={{ color: 'var(--accent)' }}>사진을 더 봅니다.</strong>
+                </p>
+              </div>
+              <div style={{ background: 'rgba(42,95,255,0.15)', borderLeft: '3px solid var(--accent)', borderRadius: '12px', padding: '20px 24px' }}>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '4px' }}>현실 2</p>
+                <p style={{ fontSize: '1rem', fontWeight: 600, lineHeight: 1.8 }}>
+                  필요한 정보가 있으면 <strong style={{ color: 'var(--accent)' }}>문의까지 넘어갑니다.</strong>
+                </p>
+              </div>
+              <div style={{ background: 'rgba(42,95,255,0.15)', borderLeft: '3px solid var(--accent)', borderRadius: '12px', padding: '20px 24px' }}>
+                <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginBottom: '4px' }}>현실 3</p>
+                <p style={{ fontSize: '1rem', fontWeight: 600, lineHeight: 1.8 }}>
+                  사람들이 글을 끝까지 읽는다는 건<br /><strong style={{ color: 'var(--accent)' }}>이미 환상에 가깝습니다.</strong>
+                </p>
+              </div>
+            </div>
+
+            <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '20px', padding: '32px 28px', textAlign: 'center' }}>
+              <p style={{ fontSize: '1.2rem', fontWeight: 900, lineHeight: 1.6, marginBottom: '8px' }}>
+                중요한 건 &ldquo;AI 티&rdquo;가 아니라
+              </p>
+              <p style={{ fontSize: '1.6rem', fontWeight: 900, lineHeight: 1.4 }}>
+                <span style={{ background: '#fff', color: 'var(--accent)', padding: '4px 14px', borderRadius: '8px' }}>검색에 노출되는가</span>
+              </p>
+              <p style={{ fontSize: '0.95rem', opacity: 0.85, marginTop: '16px', lineHeight: 1.8 }}>
+                안 보이는 글은 어차피 안 읽힙니다.<br />
+                상위노출 → 사진 → 정보 → 문의 → 매출.<br />
+                이게 진짜 흐름이에요.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* 10. 실제 후기 캡쳐 */}
         <section style={{ padding: '100px 0', background: '#fff', borderBottom: '1px solid var(--border)', overflow: 'hidden' }}>
           <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 24px' }}>
@@ -522,17 +566,7 @@ export default function BlogwriterPage() {
               <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>월 19,900원</span>
               <span style={{ display: 'block', fontSize: '2.2rem', fontWeight: 900, color: '#FF4444', marginTop: '4px' }}>SALE 월 9,900원</span>
               <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>베타 기간 한정 가격</span>
-              <div style={{ background: 'rgba(255, 68, 68, 0.15)', border: '1px solid rgba(255, 68, 68, 0.4)', borderRadius: '12px', padding: '14px 18px', marginTop: '16px', maxWidth: '360px', marginLeft: 'auto', marginRight: 'auto' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#FFD700' }}>🔥 선착순 100명 한정</span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#fff' }}>
-                    남은 자리 <span style={{ fontSize: '1.2rem', color: '#FFD700' }}>64</span>명
-                  </span>
-                </div>
-                <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.1)', borderRadius: '999px', overflow: 'hidden' }}>
-                  <div style={{ width: '36%', height: '100%', background: 'linear-gradient(90deg, #FF4444 0%, #FFD700 100%)', borderRadius: '999px' }}></div>
-                </div>
-              </div>
+              <SlotCounter variant="cta" />
             </div>
             <a href="https://www.blogwriter.co.kr" target="_blank" rel="noopener noreferrer" className="btn-main">무료로 3번 써보기 &rarr;</a>
             <p className="cta-note">가입 즉시 하루 3회 무료 생성 &middot; 카드 등록 없음</p>
