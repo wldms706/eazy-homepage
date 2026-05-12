@@ -115,6 +115,53 @@ export default function CoachingPage() {
           </div>
         </section>
 
+        {/* 권위 - 케이스 카드 3개 */}
+        <section className="sec" style={{ background: '#fff' }}>
+          <div className="inner">
+            <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center' }}>Proven Results</p>
+            <h2 className="title" style={{ textAlign: 'center', marginBottom: '8px' }}>
+              결과가 말해줍니다
+            </h2>
+            <p className="desc" style={{ textAlign: 'center', marginBottom: '40px' }}>
+              단 2시간 코칭만으로도 매출이 오르고,<br />12주 후엔 매출 구조가 완전히 바뀝니다.
+            </p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {/* CASE 1 */}
+              <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '20px', padding: '28px 24px', color: '#fff' }}>
+                <p style={{ fontSize: '0.75rem', fontWeight: 700, opacity: 0.7, letterSpacing: '1px', marginBottom: '10px' }}>CASE 1</p>
+                <p style={{ fontSize: '1rem', opacity: 0.9, marginBottom: '12px' }}>12주 그룹 코칭 후</p>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, lineHeight: 1.4 }}>
+                  매출 <span style={{ fontSize: '2.4rem' }}>4.3배</span> 상승<br />
+                  <span style={{ fontSize: '1rem', fontWeight: 600, opacity: 0.85 }}>월 140만원 → 600만원</span>
+                </h3>
+              </div>
+
+              {/* CASE 2 */}
+              <div style={{ background: '#1a1a1a', borderRadius: '20px', padding: '28px 24px', color: '#fff' }}>
+                <p style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '1px', marginBottom: '10px' }}>CASE 2</p>
+                <p style={{ fontSize: '1rem', opacity: 0.7, marginBottom: '12px' }}>단 2시간 1:1 코칭만으로</p>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, lineHeight: 1.5 }}>
+                  릴스 돌려서 <span style={{ color: 'var(--accent)' }}>매출 상승</span>
+                </h3>
+              </div>
+
+              {/* CASE 3 */}
+              <div style={{ background: '#F0F4FF', border: '1px solid #C8D6FF', borderRadius: '20px', padding: '28px 24px' }}>
+                <p style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '1px', marginBottom: '10px' }}>CASE 3</p>
+                <p style={{ fontSize: '1rem', color: 'var(--text-sub)', marginBottom: '12px' }}>번아웃으로 매출 뚝 → </p>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 900, lineHeight: 1.5, color: 'var(--text)' }}>
+                  수강 매출 <span style={{ color: 'var(--accent)' }}>1,800만원</span> 회복
+                </h3>
+              </div>
+            </div>
+
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-light)', textAlign: 'center', marginTop: '24px' }}>
+              ※ 소수 정예 1:1 밀착 프로그램 — 한 기수당 5명 미만 운영
+            </p>
+          </div>
+        </section>
+
         {/* 원장님 성과 */}
         <section className="sec" style={{ background: 'var(--bg-dark)', color: '#fff' }}>
           <div className="inner">
@@ -291,6 +338,91 @@ export default function CoachingPage() {
             <div className="blue-box">
               혼자 버티지 않아도 됩니다.<br />이미 겪어본 사람이 있으니까요.
             </div>
+          </div>
+        </section>
+
+        {/* 출신 스토리 - 카드뉴스 */}
+        <section className="sec" style={{ background: 'linear-gradient(180deg, #fff 0%, #F0F4FF 100%)' }}>
+          <div className="inner" style={{ textAlign: 'center', maxWidth: '480px' }}>
+            <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>My Story</p>
+            <h2 className="title" style={{ marginBottom: '32px' }}>
+              저도 시작은 같았습니다.
+            </h2>
+
+            <div style={{ background: '#1a1a1a', color: '#fff', borderRadius: '20px', padding: '32px 24px', marginBottom: '24px' }}>
+              <p style={{ fontSize: '0.85rem', opacity: 0.5, marginBottom: '8px' }}>26살, 가진 돈도 경험도 없이</p>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: 900, lineHeight: 1.4, marginBottom: '20px' }}>
+                <span style={{ color: '#FF7A7A' }}>2,400만원 대출</span>로<br />
+                반영구 샵을 시작했습니다
+              </h3>
+              <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '12px', padding: '16px', textAlign: 'left' }}>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, opacity: 0.85 }}>
+                  💸 1,200만원 이율 28%<br />
+                  💸 1,200만원 이율 8.9%
+                </p>
+                <p style={{ fontSize: '0.85rem', opacity: 0.6, marginTop: '12px' }}>
+                  &ldquo;28%가 얼마나 무서운지도 몰랐어요&rdquo;
+                </p>
+              </div>
+              <p style={{ fontSize: '1.1rem', fontWeight: 700, marginTop: '24px', color: 'var(--accent)' }}>
+                어떻게든 살아남아야 했습니다.
+              </p>
+            </div>
+
+            <p style={{ fontSize: '1.1rem', color: 'var(--text)', lineHeight: 1.8, marginBottom: '12px' }}>
+              그 후 7년간<br />
+              <strong style={{ fontWeight: 900 }}>혼자서 매출 구조를 만들었어요.</strong>
+            </p>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-sub)', lineHeight: 1.8 }}>
+              월 평균 매출 2,000만원,<br />
+              누적 시술 1만 명 이상.
+            </p>
+          </div>
+        </section>
+
+        {/* 위기 → 깨달음 */}
+        <section className="sec" style={{ background: 'var(--bg-dark)', color: '#fff' }}>
+          <div className="inner" style={{ textAlign: 'center', maxWidth: '480px' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '16px' }}>😵‍💫</div>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, lineHeight: 1.4, marginBottom: '24px' }}>
+              그러다 번아웃이 왔어요.
+            </h2>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 2, marginBottom: '32px' }}>
+              매출은 올랐지만 몸과 마음이 무너졌습니다.<br />
+              &ldquo;이걸 평생 혼자 짊어져야 하나?&rdquo;
+            </p>
+            <div style={{ background: 'rgba(255,255,255,0.05)', borderRadius: '16px', padding: '24px', borderLeft: '3px solid var(--accent)' }}>
+              <p style={{ fontSize: '1rem', lineHeight: 2, color: 'rgba(255,255,255,0.9)' }}>
+                그때 깨달았어요.<br />
+                <strong style={{ color: 'var(--accent)' }}>&ldquo;원장님이 없어도 굴러가는<br />구조를 만들어야 하는구나.&rdquo;</strong>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 취지 - 핵심 메시지 */}
+        <section className="sec" style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', color: '#fff' }}>
+          <div className="inner" style={{ textAlign: 'center', maxWidth: '480px' }}>
+            <p style={{ fontSize: '0.8rem', fontWeight: 700, opacity: 0.7, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>Why we do this</p>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 900, lineHeight: 1.5, marginBottom: '32px' }}>
+              실행메이킹은<br />
+              <span style={{ background: 'rgba(0,0,0,0.2)', padding: '4px 12px', borderRadius: '8px' }}>대행 서비스가 아닙니다.</span>
+            </h2>
+
+            <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '20px', padding: '32px 24px', backdropFilter: 'blur(10px)', marginBottom: '24px' }}>
+              <p style={{ fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.8 }}>
+                원장님 <strong style={{ background: '#fff', color: 'var(--accent)', padding: '2px 10px', borderRadius: '6px' }}>혼자서도</strong><br />
+                잘 운영할 수 있는<br />
+                <strong style={{ fontSize: '1.4rem' }}>운영법을 알려드립니다.</strong>
+              </p>
+            </div>
+
+            <p style={{ fontSize: '1rem', lineHeight: 1.8, opacity: 0.95 }}>
+              그래서 결국,<br />
+              <strong style={{ fontSize: '1.2rem', borderBottom: '2px solid #fff', paddingBottom: '2px' }}>
+                인생을 잘 살 수 있는 방법
+              </strong>이에요.
+            </p>
           </div>
         </section>
 
