@@ -165,6 +165,102 @@ export default function CoachingPage() {
         {/* 탭 */}
         <CoachingTabs />
 
+        {/* 원장님 성과 */}
+        <section className="sec" style={{ background: 'var(--bg-dark)', color: '#fff' }}>
+          <div className="inner">
+            <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center' }}>Real Results</p>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '32px', lineHeight: 1.4, textAlign: 'center' }}>
+              실행메이킹을 거친 원장님들의 변화
+            </h2>
+
+            {/* 시술 원장님 성과 카드 */}
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '32px 28px', marginBottom: '20px' }}>
+              <span style={{ display: 'inline-block', fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', background: 'rgba(42,95,255,0.15)', padding: '4px 12px', borderRadius: '100px', marginBottom: '16px' }}>시술 원장님</span>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '20px', lineHeight: 1.5 }}>
+                2025년 월평균 매출 <span style={{ color: '#FF7A7A' }}>140만원</span>
+                <br />→ 실행메이킹 진행 후 <span style={{ color: 'var(--accent)' }}>월 600만원</span>
+              </h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px', background: 'rgba(0,0,0,0.3)', borderRadius: '12px' }}>
+                <div style={{ flex: 1, textAlign: 'center' }}>
+                  <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>BEFORE</p>
+                  <p style={{ fontSize: '1.4rem', fontWeight: 900, color: '#FF7A7A' }}>140만원</p>
+                </div>
+                <span style={{ fontSize: '1.5rem', color: 'var(--accent)' }}>→</span>
+                <div style={{ flex: 1, textAlign: 'center' }}>
+                  <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>AFTER</p>
+                  <p style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent)' }}>600만원</p>
+                </div>
+                <span style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--accent)' }}>4.3x</span>
+              </div>
+            </div>
+
+            {/* 수강 원장님 성과 카드 */}
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '32px 28px' }}>
+              <span style={{ display: 'inline-block', fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', background: 'rgba(42,95,255,0.15)', padding: '4px 12px', borderRadius: '100px', marginBottom: '16px' }}>수강 원장님</span>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, marginBottom: '20px', lineHeight: 1.6 }}>
+                번아웃으로 매출이 뚝 떨어졌다가<br />
+                <span style={{ color: 'var(--accent)' }}>월 수강 매출 1,800만원</span> 회복
+              </h3>
+              <div style={{ background: 'rgba(0,0,0,0.3)', borderRadius: '12px', padding: '20px', borderLeft: '3px solid var(--accent)' }}>
+                <p style={{ fontSize: '0.95rem', lineHeight: 2, color: 'rgba(255,255,255,0.85)' }}>
+                  &ldquo;예전에는 릴스만 매일 올려도 수강문의가 왔었는데,
+                  인스타 알고리즘 바뀌고 번아웃이 와서 매출이 뚝 떨어졌었어요.
+                  어디서부터 어떻게 다시 시작해야 할지 몰랐는데,
+                  지은 대표님 만나고 나서 다시 <strong style={{ color: 'var(--accent)' }}>수강매출이 1,800만원</strong>을 찍었어요.&rdquo;
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 직접 찍어드린 콘텐츠 */}
+        <section className="sec">
+          <div className="inner">
+            <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center' }}>Real Field Work</p>
+            <h2 className="title" style={{ textAlign: 'center', marginBottom: '8px' }}>
+              직접 매장 가서 찍어드립니다
+            </h2>
+            <p className="desc" style={{ textAlign: 'center', marginBottom: '32px' }}>
+              알려주고 끝이 아니라, 광고용 콘텐츠를 직접 기획·촬영·편집해드립니다.<br />
+              실제 원장님들 매장에서 만든 영상이에요.
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
+              {[
+                { src: '/coaching-videos/kiiara.mp4', name: '키아라' },
+                { src: '/coaching-videos/mandzhandz.mp4', name: '만즈한즈' },
+                { src: '/coaching-videos/orda.mp4', name: '오르다' },
+                { src: '/coaching-videos/daehang.mp4', name: '대행 영상' },
+              ].map((v) => (
+                <div key={v.src} style={{ borderRadius: '12px', overflow: 'hidden', background: '#000' }}>
+                  <video src={v.src} autoPlay loop muted playsInline style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', display: 'block' }} />
+                  <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-sub)', textAlign: 'center', padding: '8px 0', background: '#fff', borderTop: '1px solid var(--border)' }}>{v.name}</p>
+                </div>
+              ))}
+            </div>
+            <div className="blue-box" style={{ marginTop: '32px' }}>
+              "이런 콘텐츠 4개 + 광고 세팅"이 다 포함됩니다.
+            </div>
+          </div>
+        </section>
+
+        {/* 카톡 후기 */}
+        <section className="sec" style={{ background: '#FAFAFA' }}>
+          <div className="inner">
+            <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center' }}>Real Reviews</p>
+            <h2 className="title" style={{ textAlign: 'center', marginBottom: '32px' }}>
+              실제 원장님들의 카톡 후기
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
+              {['a.jpeg', 'b.jpeg', 'C.jpeg', 'd.jpeg', 'e.png', 'F.jpeg', 'a2.jpeg', 'b2.jpeg', 'd2.png', 'e1.jpeg', 'review-cap-1.png', 'review-cap-2.png', 'review-cap-3.png'].map((img) => (
+                <div key={img} style={{ borderRadius: '12px', overflow: 'hidden', background: '#fff', border: '1px solid var(--border)' }}>
+                  <img src={`/coaching-reviews/${img}`} alt="원장님 후기" style={{ width: '100%', display: 'block' }} />
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', textAlign: 'center', marginTop: '24px' }}>※ 모든 후기는 실제 카카오톡 대화 캡쳐이며, 개인정보 보호를 위해 일부만 공개합니다.</p>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="cta-sec">
           <h2>혼자 고민할지,<br />판을 새로 짤지.</h2>
