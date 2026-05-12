@@ -232,48 +232,13 @@ export default function CoachingPage() {
               알려주고 끝이 아니라, 광고용 콘텐츠를 직접 기획·촬영·편집해드립니다.<br />
               실제 원장님들 매장에서 만든 영상이에요.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', maxWidth: '500px', margin: '0 auto' }}>
               {[
-                { src: '/coaching-videos/kiiara.mp4', name: 'A 원장님', blur: true },
-                { src: '/coaching-videos/mandzhandz.mp4', name: 'B 원장님', blur: true },
-                { src: '/coaching-videos/orda.mp4', name: 'C 원장님', blur: true },
-                { src: '/coaching-videos/daehang.mp4', name: 'D 원장님', blur: false },
-                { src: '/coaching-videos/coach-new.mp4', name: 'E 원장님', blur: false },
+                { src: '/coaching-videos/daehang.mp4', name: 'A 원장님' },
+                { src: '/coaching-videos/coach-new.mp4', name: 'B 원장님' },
               ].map((v) => (
-                <div key={v.src} style={{ borderRadius: '12px', overflow: 'hidden', background: '#000', position: 'relative' }}>
-                  <video
-                    src={v.src}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    style={{
-                      width: '100%',
-                      aspectRatio: '9/16',
-                      objectFit: 'cover',
-                      display: 'block',
-                      filter: v.blur ? 'blur(18px)' : 'none',
-                      transform: v.blur ? 'scale(1.1)' : 'none',
-                    }}
-                  />
-                  {v.blur && (
-                    <div style={{
-                      position: 'absolute',
-                      inset: 0,
-                      bottom: '32px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      background: 'rgba(0,0,0,0.35)',
-                      color: '#fff',
-                      fontSize: '0.85rem',
-                      fontWeight: 700,
-                      textAlign: 'center',
-                      padding: '12px',
-                    }}>
-                      🔒<br />원장님<br />보호
-                    </div>
-                  )}
+                <div key={v.src} style={{ borderRadius: '12px', overflow: 'hidden', background: '#000' }}>
+                  <video src={v.src} autoPlay loop muted playsInline style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', display: 'block' }} />
                   <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-sub)', textAlign: 'center', padding: '8px 0', background: '#fff', borderTop: '1px solid var(--border)' }}>{v.name}</p>
                 </div>
               ))}
