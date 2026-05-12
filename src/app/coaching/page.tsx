@@ -226,10 +226,10 @@ export default function CoachingPage() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
               {[
-                { src: '/coaching-videos/kiiara.mp4', name: '키아라' },
-                { src: '/coaching-videos/mandzhandz.mp4', name: '만즈한즈' },
-                { src: '/coaching-videos/orda.mp4', name: '오르다' },
-                { src: '/coaching-videos/daehang.mp4', name: '대행 영상' },
+                { src: '/coaching-videos/kiiara.mp4', name: 'A 원장님' },
+                { src: '/coaching-videos/mandzhandz.mp4', name: 'B 원장님' },
+                { src: '/coaching-videos/orda.mp4', name: 'C 원장님' },
+                { src: '/coaching-videos/daehang.mp4', name: 'D 원장님' },
               ].map((v) => (
                 <div key={v.src} style={{ borderRadius: '12px', overflow: 'hidden', background: '#000' }}>
                   <video src={v.src} autoPlay loop muted playsInline style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', display: 'block' }} />
