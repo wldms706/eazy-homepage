@@ -249,24 +249,6 @@ export default function CoachingPage() {
           </div>
         </section>
 
-        {/* 카톡 후기 */}
-        <section className="sec" style={{ background: '#FAFAFA' }}>
-          <div className="inner">
-            <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px', textAlign: 'center' }}>Real Reviews</p>
-            <h2 className="title" style={{ textAlign: 'center', marginBottom: '32px' }}>
-              실제 원장님들의 카톡 후기
-            </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '12px' }}>
-              {['a.jpeg', 'b.jpeg', 'C.jpeg', 'd.jpeg', 'e.png', 'F.jpeg', 'a2.jpeg', 'b2.jpeg', 'd2.png', 'e1.jpeg', 'review-cap-1.png', 'review-cap-2.png', 'review-cap-3.png'].map((img) => (
-                <div key={img} style={{ borderRadius: '12px', overflow: 'hidden', background: '#fff', border: '1px solid var(--border)' }}>
-                  <img src={`/coaching-reviews/${img}`} alt="원장님 후기" style={{ width: '100%', display: 'block' }} />
-                </div>
-              ))}
-            </div>
-            <p style={{ fontSize: '0.8rem', color: 'var(--text-light)', textAlign: 'center', marginTop: '24px' }}>※ 모든 후기는 실제 카카오톡 대화 캡쳐이며, 개인정보 보호를 위해 일부만 공개합니다.</p>
-          </div>
-        </section>
-
         {/* 공감 + 문제 - 카드뉴스 스타일 */}
         <section className="sec" style={{ background: 'linear-gradient(180deg, #fff 0%, #E8E8E8 100%)', padding: '80px 24px', borderBottom: '1px solid var(--border)' }}>
           <div className="inner" style={{ maxWidth: '420px', textAlign: 'center' }}>

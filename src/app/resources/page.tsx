@@ -207,6 +207,17 @@ export default function ResourcesPage() {
                 <span className="resource-btn" style={{ background: '#FF0050' }}>릴스 대본 만들기 &rarr;</span>
               </div>
             </a>
+            <a href="https://chatgpt.com/g/g-695c7ab57d8c81919015118e0eb4daac-byutisyab-keontenceu-maseuteo" target="_blank" rel="noopener noreferrer" className="resource-card">
+              <div style={{ padding: '40px', background: 'linear-gradient(135deg, #FFC0CB 0%, #FF8FA3 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--border)' }}>
+                <span style={{ fontSize: '3rem', fontWeight: 900, color: '#fff', letterSpacing: '-1px' }}>GPTs</span>
+              </div>
+              <div className="resource-info">
+                <span className="resource-badge" style={{ background: '#FF6B8A' }}>무료 AI 도구</span>
+                <h3 className="resource-name">뷰티샵 컨텐츠 마스터</h3>
+                <p className="resource-desc">&ldquo;SNS는 해야 하는데 뭘 올려야 할지 모르겠다&rdquo;는 원장님을 위한 컨텐츠 아이디어 자동 생성기.</p>
+                <span className="resource-btn" style={{ background: '#FF6B8A' }}>컨텐츠 만들기 &rarr;</span>
+              </div>
+            </a>
           </div>
 
           <p className="category-label">무료 영상 가이드</p>
