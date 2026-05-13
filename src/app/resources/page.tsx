@@ -220,14 +220,14 @@ export default function ResourcesPage() {
               </div>
               <div className="resource-info">
                 <span className="resource-badge" style={{ background: '#FF6B8A' }}>무료 AI 도구</span>
-                <h3 className="resource-name">뷰티샵 컨텐츠 마스터</h3>
-                <p className="resource-desc">&ldquo;SNS는 해야 하는데 뭘 올려야 할지 모르겠다&rdquo;는 원장님을 위한 컨텐츠 아이디어 자동 생성기.</p>
+                <h3 className="resource-name">뷰티샵 카피라이팅 마스터</h3>
+                <p className="resource-desc">&ldquo;SNS는 해야 하는데 뭘 올려야 할지 모르겠다&rdquo;는 원장님을 위한 카피라이팅 자동 생성기.</p>
                 <LinkGateButton
                   url="https://chatgpt.com/g/g-695c7ab57d8c81919015118e0eb4daac-byutisyab-keontenceu-maseuteo"
-                  label="뷰티샵 컨텐츠 마스터"
-                  buttonText="컨텐츠 만들기 →"
+                  label="뷰티샵 카피라이팅 마스터"
+                  buttonText="카피 만들기 →"
                   buttonStyle={{ background: '#FF6B8A' }}
-                  resourceLabel="뷰티샵 컨텐츠 마스터 GPTs"
+                  resourceLabel="뷰티샵 카피라이팅 마스터 GPTs"
                 />
               </div>
             </div>
