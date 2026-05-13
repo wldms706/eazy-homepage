@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DownloadButton } from "./DownloadModal";
+import { LinkGateButton } from "./LinkGateButton";
 
 export const metadata: Metadata = {
   title: "무료 자료 모음 | EAZY",
@@ -196,7 +197,7 @@ export default function ResourcesPage() {
           <p className="category-label">AI 도구</p>
           <h2 className="category-title">무료로 쓸 수 있는 AI 도구</h2>
           <div className="resource-grid">
-            <a href="https://chatgpt.com/g/g-699ae58f7f8081919bbaad42e513eb19-rilseu-ver-2" target="_blank" rel="noopener noreferrer" className="resource-card">
+            <div className="resource-card">
               <div style={{ padding: '40px', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--border)' }}>
                 <span style={{ fontSize: '3rem', fontWeight: 900, color: '#000', letterSpacing: '-1px' }}>GPTs</span>
               </div>
@@ -204,10 +205,16 @@ export default function ResourcesPage() {
                 <span className="resource-badge" style={{ background: '#FF0050' }}>무료 AI 도구</span>
                 <h3 className="resource-name">릴스 대본 자동 생성기</h3>
                 <p className="resource-desc">뷰티샵 릴스 대본을 AI가 자동으로 만들어줍니다. ChatGPT 기반 무료 도구.</p>
-                <span className="resource-btn" style={{ background: '#FF0050' }}>릴스 대본 만들기 &rarr;</span>
+                <LinkGateButton
+                  url="https://chatgpt.com/g/g-699ae58f7f8081919bbaad42e513eb19-rilseu-ver-2"
+                  label="릴스 대본 자동 생성기"
+                  buttonText="릴스 대본 만들기 →"
+                  buttonStyle={{ background: '#FF0050' }}
+                  resourceLabel="릴스 대본 GPTs"
+                />
               </div>
-            </a>
-            <a href="https://chatgpt.com/g/g-695c7ab57d8c81919015118e0eb4daac-byutisyab-keontenceu-maseuteo" target="_blank" rel="noopener noreferrer" className="resource-card">
+            </div>
+            <div className="resource-card">
               <div style={{ padding: '40px', background: 'linear-gradient(135deg, #FFC0CB 0%, #FF8FA3 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderBottom: '1px solid var(--border)' }}>
                 <span style={{ fontSize: '3rem', fontWeight: 900, color: '#fff', letterSpacing: '-1px' }}>GPTs</span>
               </div>
@@ -215,9 +222,15 @@ export default function ResourcesPage() {
                 <span className="resource-badge" style={{ background: '#FF6B8A' }}>무료 AI 도구</span>
                 <h3 className="resource-name">뷰티샵 컨텐츠 마스터</h3>
                 <p className="resource-desc">&ldquo;SNS는 해야 하는데 뭘 올려야 할지 모르겠다&rdquo;는 원장님을 위한 컨텐츠 아이디어 자동 생성기.</p>
-                <span className="resource-btn" style={{ background: '#FF6B8A' }}>컨텐츠 만들기 &rarr;</span>
+                <LinkGateButton
+                  url="https://chatgpt.com/g/g-695c7ab57d8c81919015118e0eb4daac-byutisyab-keontenceu-maseuteo"
+                  label="뷰티샵 컨텐츠 마스터"
+                  buttonText="컨텐츠 만들기 →"
+                  buttonStyle={{ background: '#FF6B8A' }}
+                  resourceLabel="뷰티샵 컨텐츠 마스터 GPTs"
+                />
               </div>
-            </a>
+            </div>
           </div>
 
           <p className="category-label">무료 영상 가이드</p>
