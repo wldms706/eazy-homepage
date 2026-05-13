@@ -134,6 +134,85 @@ export default function ResourcesPage() {
 
         {/* Content */}
         <div className="content">
+          {/* 🔥 광고 미끼 - 뷰티샵 카피라이팅 마스터 */}
+          <div style={{
+            background: 'linear-gradient(135deg, #FF6B8A 0%, #FFC0CB 100%)',
+            borderRadius: '24px',
+            padding: '40px 32px',
+            marginBottom: '60px',
+            boxShadow: '0 20px 50px rgba(255,107,138,0.25)',
+            position: 'relative',
+            overflow: 'hidden',
+          }}>
+            <div style={{ position: 'absolute', top: '-30px', right: '-30px', fontSize: '14rem', opacity: 0.15 }}>✨</div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <span style={{
+                display: 'inline-block',
+                background: '#1a1a1a',
+                color: '#fff',
+                fontSize: '0.75rem',
+                fontWeight: 700,
+                padding: '6px 14px',
+                borderRadius: '100px',
+                marginBottom: '16px',
+                letterSpacing: '1px',
+              }}>🔥 지금 무료로 받아가기</span>
+              <h2 style={{
+                fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
+                fontWeight: 900,
+                color: '#fff',
+                lineHeight: 1.3,
+                marginBottom: '12px',
+                wordBreak: 'keep-all',
+              }}>
+                뷰티샵 카피라이팅<br />
+                <span style={{ background: '#1a1a1a', padding: '2px 12px', borderRadius: '8px' }}>마스터 GPT</span>
+              </h2>
+              <p style={{
+                fontSize: '1rem',
+                color: 'rgba(255,255,255,0.95)',
+                lineHeight: 1.7,
+                marginBottom: '24px',
+                wordBreak: 'keep-all',
+                fontWeight: 500,
+              }}>
+                &ldquo;SNS는 해야 하는데 뭘 올려야 할지 모르겠어요&rdquo;<br />
+                원장님의 마음을 정확히 짚어주는<br />
+                <strong>뷰티샵 전용 카피라이팅 AI</strong>
+              </p>
+              <div style={{
+                background: 'rgba(255,255,255,0.2)',
+                backdropFilter: 'blur(10px)',
+                borderRadius: '12px',
+                padding: '14px 18px',
+                marginBottom: '20px',
+                fontSize: '0.9rem',
+                color: '#fff',
+                lineHeight: 1.7,
+              }}>
+                ✓ 인스타 캡션, 릴스 후킹 멘트 자동 생성<br />
+                ✓ 뷰티샵 업종 특화 표현<br />
+                ✓ 한 번 등록하면 무제한 사용
+              </div>
+              <LinkGateButton
+                url="https://chatgpt.com/g/g-695c7ab57d8c81919015118e0eb4daac-byutisyab-keontenceu-maseuteo"
+                label="뷰티샵 카피라이팅 마스터 GPT"
+                buttonText="지금 무료로 받아가기 →"
+                buttonStyle={{
+                  background: '#1a1a1a',
+                  color: '#fff',
+                  padding: '16px 28px',
+                  fontSize: '1.05rem',
+                  fontWeight: 900,
+                  borderRadius: '100px',
+                  width: '100%',
+                  maxWidth: '320px',
+                }}
+                resourceLabel="뷰티샵 카피라이팅 마스터 GPTs (메인 미끼)"
+              />
+            </div>
+          </div>
+
           {/* 진단 도구 */}
           <p className="category-label">진단 도구</p>
           <h2 className="category-title">내 샵 상태 점검하기</h2>
