@@ -33,7 +33,7 @@ export function LinkGateButton({ url, label, buttonText, buttonStyle, resourceLa
     setError("");
   }, []);
 
-  const logAndRedirect = useCallback(
+  const logToSheet = useCallback(
     async (logLabel: string) => {
       try {
         await fetch(GOOGLE_SHEET_URL, {
@@ -49,10 +49,8 @@ export function LinkGateButton({ url, label, buttonText, buttonStyle, resourceLa
           }),
         });
       } catch {}
-
-      window.open(url, "_blank", "noopener,noreferrer");
     },
-    [url, name, phone, shop]
+    [name, phone, shop]
   );
 
   const openModal = async (e: React.MouseEvent) => {
@@ -60,9 +58,13 @@ export function LinkGateButton({ url, label, buttonText, buttonStyle, resourceLa
     setIsOpen(true);
     setStatus("checking");
 
+    // 팝업 차단 회피: 클릭 직후 빈 창 미리 열어두기
+    const newWindow = window.open("about:blank", "_blank");
+
     const { data: { user } } = await supabase.auth.getUser();
 
     if (!user) {
+      if (newWindow) newWindow.close();
       setStatus("loginRequired");
       return;
     }
@@ -76,6 +78,7 @@ export function LinkGateButton({ url, label, buttonText, buttonStyle, resourceLa
       .single();
 
     if (!profile || !profile.name || !profile.business_name || !profile.shop_phone) {
+      if (newWindow) newWindow.close();
       setName(profile?.name || "");
       setShop(profile?.business_name || "");
       setPhone(profile?.shop_phone || "");
@@ -83,12 +86,13 @@ export function LinkGateButton({ url, label, buttonText, buttonStyle, resourceLa
       return;
     }
 
-    // 정보 있음 → 바로 새 창으로 이동
+    // 정보 있음 → 미리 연 창에 URL 설정
     setName(profile.name);
     setShop(profile.business_name);
     setPhone(profile.shop_phone);
     setStatus("redirecting");
-    await logAndRedirect(`${resourceLabel} (회원: ${profile.name})`);
+    if (newWindow) newWindow.location.href = url;
+    await logToSheet(`${resourceLabel} (회원: ${profile.name})`);
     setTimeout(() => closeModal(), 1000);
   };
 
@@ -128,6 +132,9 @@ export function LinkGateButton({ url, label, buttonText, buttonStyle, resourceLa
       return;
     }
 
+    // 팝업 차단 회피: 폼 제출 즉시 빈 창 열어두기
+    const newWindow = window.open("about:blank", "_blank");
+
     setError("");
     setStatus("redirecting");
 
@@ -142,7 +149,8 @@ export function LinkGateButton({ url, label, buttonText, buttonStyle, resourceLa
       console.error(err);
     }
 
-    await logAndRedirect(`${resourceLabel} (신규 가입)`);
+    if (newWindow) newWindow.location.href = url;
+    await logToSheet(`${resourceLabel} (신규 가입)`);
     setTimeout(() => closeModal(), 1200);
   };
 
