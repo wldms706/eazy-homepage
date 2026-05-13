@@ -161,12 +161,12 @@ export default function ResourcesPage() {
                 fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
                 fontWeight: 900,
                 color: '#fff',
-                lineHeight: 1.3,
-                marginBottom: '12px',
+                lineHeight: 1.7,
+                marginBottom: '20px',
                 wordBreak: 'keep-all',
               }}>
                 뷰티샵 카피라이팅<br />
-                <span style={{ background: '#1a1a1a', padding: '2px 12px', borderRadius: '8px' }}>마스터 GPT</span>
+                <span style={{ background: '#1a1a1a', padding: '8px 16px', borderRadius: '10px', display: 'inline-block', marginTop: '8px' }}>마스터 GPT</span>
               </h2>
               <p style={{
                 fontSize: '1rem',
