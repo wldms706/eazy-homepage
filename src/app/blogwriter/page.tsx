@@ -261,9 +261,9 @@ export default function BlogwriterPage() {
           <div className="section-inner">
             <p className="hero-sub">Blog Writer by EAZY</p>
             <h1 className="hero-headline">
-              네이버 블로그?<br /><em>배우지 마세요.</em>
+              <em>절대 놓칠 수 없는</em><br />네이버 블로그 마케팅
             </h1>
-            <p className="hero-desc">배울 시간에 글 하나 더 올리세요.<br />3분이면 상위노출 글이 완성됩니다.</p>
+            <p className="hero-desc">네이버 상위노출, 하고 싶지 않으세요?<br /><strong style={{ color: '#fff' }}>이제 누구나 할 수 있습니다.</strong></p>
             <div className="hero-cta-wrap">
               <div style={{ marginBottom: '16px' }}>
                 <span style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>월 19,900원</span>
@@ -282,6 +282,69 @@ export default function BlogwriterPage() {
                 <span className="counter-num">3분</span>
                 <span className="counter-label">평균 작성 시간</span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 1-1. 실제 원장님들의 반응 (캐러셀) */}
+        <section style={{ padding: '80px 0 60px', background: '#fff', borderBottom: '1px solid var(--border)', overflow: 'hidden' }}>
+          <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 24px' }}>
+            <p style={{ textAlign: 'center', fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Real Reviews</p>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 900, textAlign: 'center', marginBottom: '12px' }}>실제 원장님들의 반응</h2>
+            <p style={{ textAlign: 'center', color: 'var(--text-sub)', marginBottom: '40px' }}>블로그라이터를 사용한 원장님들의 실제 카톡 캡쳐입니다.</p>
+          </div>
+          <ReviewImageSlider />
+          <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-sub)', marginTop: '24px' }}>※ 개인정보 보호를 위해 일부 정보는 가려져 있습니다.</p>
+        </section>
+
+        {/* 1-2. 매출 흐름 - 5단계 */}
+        <section style={{ padding: '80px 24px', background: 'linear-gradient(180deg, #FAFAFA 0%, #fff 100%)' }}>
+          <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+            <p style={{ textAlign: 'center', fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>How it works</p>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2rem)', fontWeight: 900, textAlign: 'center', marginBottom: '12px', lineHeight: 1.4 }}>
+              실제로 이렇게<br /><span style={{ color: 'var(--accent)' }}>매출이 만들어집니다</span>
+            </h2>
+            <p style={{ textAlign: 'center', color: 'var(--text-sub)', marginBottom: '48px', lineHeight: 1.8 }}>
+              막연한 약속이 아니에요. 명확한 흐름이 있습니다.
+            </p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {[
+                { step: '01', title: '블로그라이터로 글쓰기', desc: '키워드만 입력하면 3분 만에 상위노출용 글 완성', emoji: '⌨️' },
+                { step: '02', title: '네이버 상위노출', desc: '검색하면 우리 글이 상위에 노출됨', emoji: '📈' },
+                { step: '03', title: '잠재 고객이 글을 봄', desc: '내 매장이 진짜 필요한 사람한테 발견됨', emoji: '👀' },
+                { step: '04', title: '문의·예약 폭주', desc: '글 → 카톡 → 예약으로 자연스럽게 흐름', emoji: '💬' },
+                { step: '05', title: '매출 발생', desc: '광고 안 돌려도 자동으로 매출이 만들어짐', emoji: '💰' },
+              ].map((item, i, arr) => (
+                <div key={item.step}>
+                  <div style={{
+                    background: '#fff',
+                    border: '1px solid var(--border)',
+                    borderRadius: '16px',
+                    padding: '20px 24px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '16px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                  }}>
+                    <div style={{ fontSize: '2rem', flexShrink: 0 }}>{item.emoji}</div>
+                    <div style={{ flex: 1 }}>
+                      <p style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '1px', marginBottom: '4px' }}>STEP {item.step}</p>
+                      <h3 style={{ fontSize: '1.05rem', fontWeight: 800, marginBottom: '4px', color: 'var(--text)' }}>{item.title}</h3>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-sub)', lineHeight: 1.6 }}>{item.desc}</p>
+                    </div>
+                  </div>
+                  {i < arr.length - 1 && (
+                    <div style={{ textAlign: 'center', padding: '6px 0', color: 'var(--accent)', fontSize: '1.4rem', fontWeight: 700 }}>↓</div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div style={{ marginTop: '40px', background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '20px', padding: '32px 24px', textAlign: 'center', color: '#fff' }}>
+              <p style={{ fontSize: '0.9rem', opacity: 0.9, marginBottom: '8px' }}>이 흐름을 만들어낸 결과</p>
+              <p style={{ fontSize: '2.4rem', fontWeight: 900, lineHeight: 1.2 }}>월 1,500만원<span style={{ fontSize: '1rem', fontWeight: 600 }}> 매출</span></p>
+              <p style={{ fontSize: '0.85rem', opacity: 0.85, marginTop: '8px' }}>광고비 0원, 블로그 한 채로</p>
             </div>
           </div>
         </section>
@@ -519,16 +582,6 @@ export default function BlogwriterPage() {
               </p>
             </div>
           </div>
-        </section>
-
-        {/* 10. 실제 후기 캡쳐 */}
-        <section style={{ padding: '100px 0', background: '#fff', borderBottom: '1px solid var(--border)', overflow: 'hidden' }}>
-          <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 24px' }}>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 900, textAlign: 'center', marginBottom: '12px' }}>실제 원장님들의 반응</h2>
-            <p style={{ textAlign: 'center', color: 'var(--text-sub)', marginBottom: '40px' }}>블로그라이터를 사용한 원장님들의 실제 카톡 캡쳐입니다.</p>
-          </div>
-          <ReviewImageSlider />
-          <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-sub)', marginTop: '24px' }}>※ 개인정보 보호를 위해 일부 정보는 가려져 있습니다.</p>
         </section>
 
         {/* 업종 확장 */}
