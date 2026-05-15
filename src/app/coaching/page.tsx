@@ -167,7 +167,7 @@ export default function CoachingPage() {
 
             <div style={{ marginTop: '32px', padding: '16px 20px', background: '#fff', borderRadius: '100px', border: '1px solid var(--border)', display: 'inline-block' }}>
               <p style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--text-sub)' }}>
-                🤝 한 기수당 <strong style={{ color: 'var(--accent)' }}>5명 미만</strong> · 소수 정예 밀착
+                🤝 한 기수당 <strong style={{ color: 'var(--accent)' }}>4명 한정</strong> · 소수 정예 밀착
               </p>
             </div>
           </div>
@@ -240,6 +240,7 @@ export default function CoachingPage() {
                 { src: '/coaching-videos/coach-3.mp4', name: 'D 원장님' },
                 { src: '/coaching-videos/coach-4.mp4', name: 'E 원장님' },
                 { src: '/coaching-videos/coach-5.mp4', name: 'F 원장님' },
+                { src: '/coaching-videos/coach-6.mp4', name: 'G 원장님' },
               ].map((v) => (
                 <div key={v.src} style={{ borderRadius: '12px', overflow: 'hidden', background: '#000' }}>
                   <video src={v.src} autoPlay loop muted playsInline style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', display: 'block' }} />
