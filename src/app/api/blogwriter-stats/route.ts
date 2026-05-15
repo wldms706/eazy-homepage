@@ -1,36 +1,26 @@
 import { NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 
-const TOTAL_SLOTS = 100;
-// 결제 회원 수 + 베이스 (런칭 직후 임시, 실제 결제자 늘면 같이 늘어남)
-const BASE_TAKEN = 25;
-const MIN_REMAINING = 5;
+// blog-writer의 promo-count API와 동일한 로직
+const PROMO_LIMIT = 100;
 
 export async function GET() {
   try {
-    const supabase = createAdminClient();
+    const admin = createAdminClient();
 
-    // 토스페이먼츠로 실제 결제 완료된 활성 구독자 수 카운트
-    const { count, error } = await supabase
+    const { count } = await admin
       .from('subscriptions')
-      .select('id', { count: 'exact', head: true })
-      .eq('status', 'active');
+      .select('id', { count: 'exact', head: true });
 
-    if (error) throw error;
-
-    const paidSubscribers = count || 0;
-    // 실제 결제자 + 베이스
-    const subscribers = Math.min(TOTAL_SLOTS - MIN_REMAINING, BASE_TAKEN + paidSubscribers);
-    const remainingSlots = TOTAL_SLOTS - subscribers;
-    const percentageTaken = Math.round((subscribers / TOTAL_SLOTS) * 100);
+    const current = count || 0;
+    const remaining = Math.max(0, PROMO_LIMIT - current);
+    const percentageTaken = Math.min(100, Math.round((current / PROMO_LIMIT) * 100));
 
     return NextResponse.json({
-      total: TOTAL_SLOTS,
-      subscribers,
-      remaining: remainingSlots,
+      total: PROMO_LIMIT,
+      subscribers: current,
+      remaining,
       percentageTaken,
-      // 디버깅용 (브라우저 콘솔에서 확인 가능)
-      _real: paidSubscribers,
     }, {
       headers: {
         'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120',
@@ -39,10 +29,10 @@ export async function GET() {
   } catch (err) {
     console.error('블로그라이터 통계 조회 실패:', err);
     return NextResponse.json({
-      total: 100,
-      subscribers: BASE_TAKEN,
-      remaining: TOTAL_SLOTS - BASE_TAKEN,
-      percentageTaken: BASE_TAKEN,
+      total: PROMO_LIMIT,
+      subscribers: 0,
+      remaining: PROMO_LIMIT,
+      percentageTaken: 0,
     });
   }
 }
