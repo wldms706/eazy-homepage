@@ -553,69 +553,146 @@ export default function BlogwriterPage() {
           </div>
         </section>
 
-        {/* 7. 기존 방식과 비교 */}
-        <section className="section oldway-section">
-          <div className="section-inner">
-            <h2 className="oldway-title">아직도 이렇게 하고 계세요?</h2>
-            <p className="oldway-sub">대부분의 원장님이 거치는 과정입니다.</p>
-            <div className="oldway-steps">
-              <div className="oldway-step"><span className="num">1</span>블로그 강의 듣고 (50만원)</div>
-              <div className="oldway-step"><span className="num">2</span>키워드 공부하고</div>
-              <div className="oldway-step"><span className="num">3</span>GPT로 글 뽑아보고</div>
-              <div className="oldway-step"><span className="num">4</span>네이버에 안 뜨니까 또 수정하고</div>
-              <div className="oldway-step"><span className="num">5</span>결국 3일 만에 포기</div>
+        {/* 7. 기존 방식과 비교 - 카드뉴스 스타일 */}
+        <section style={{ padding: '100px 24px', background: '#FAFAFA', borderBottom: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ fontSize: '3.5rem', marginBottom: '12px', lineHeight: 1 }}>😩</div>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.2rem)', fontWeight: 900, lineHeight: 1.4, marginBottom: '12px' }}>
+              아직도 <span style={{ background: 'linear-gradient(120deg, transparent 60%, #FFE066 60%)' }}>이렇게</span> 하고 계세요?
+            </h2>
+            <p style={{ color: 'var(--text-sub)', marginBottom: '40px' }}>
+              대부분의 원장님이 거치는 과정이에요.
+            </p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
+              {[
+                { num: '1', text: '블로그 강의 듣고', cost: '💸 50만원' },
+                { num: '2', text: '키워드 공부하고', cost: '⏰ 5시간' },
+                { num: '3', text: 'GPT로 글 뽑아보고', cost: '⏰ 3시간' },
+                { num: '4', text: '네이버에 안 뜨니까 또 수정', cost: '😤' },
+                { num: '5', text: '결국 3일 만에 포기', cost: '🏳️' },
+              ].map((step, i, arr) => (
+                <div key={step.num}>
+                  <div style={{
+                    background: '#fff',
+                    border: '1px solid var(--border)',
+                    borderRadius: '14px',
+                    padding: '16px 20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '14px',
+                    textAlign: 'left',
+                  }}>
+                    <div style={{ width: '32px', height: '32px', background: '#FF4444', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: '0.9rem', flexShrink: 0 }}>{step.num}</div>
+                    <p style={{ flex: 1, fontSize: '0.95rem', fontWeight: 600, color: 'var(--text)' }}>{step.text}</p>
+                    <span style={{ fontSize: '0.85rem', color: 'var(--text-sub)', whiteSpace: 'nowrap' }}>{step.cost}</span>
+                  </div>
+                  {i < arr.length - 1 && (
+                    <div style={{ textAlign: 'center', padding: '2px 0', color: '#FF4444', fontSize: '1.1rem' }}>↓</div>
+                  )}
+                </div>
+              ))}
             </div>
-            <div className="problem-quote">배우느라 쓴 시간과 돈, <em>그걸로 블로그라이터 6개월 씁니다.</em></div>
+
+            <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '20px', padding: '32px 24px', color: '#fff', boxShadow: '0 12px 30px rgba(42,95,255,0.25)' }}>
+              <p style={{ fontSize: '0.9rem', opacity: 0.9, marginBottom: '8px' }}>배우느라 쓴 시간과 돈</p>
+              <p style={{ fontSize: 'clamp(1.2rem, 3.5vw, 1.5rem)', fontWeight: 900, lineHeight: 1.5 }}>
+                그 돈으로<br />
+                <span style={{ background: '#1a1a1a', padding: '4px 14px', borderRadius: '8px', display: 'inline-block', marginTop: '8px' }}>블로그라이터 50개월 사용 가능</span>
+              </p>
+              <p style={{ fontSize: '0.85rem', marginTop: '12px', opacity: 0.85 }}>(50만원 ÷ 9,900원 ≈ 50개월)</p>
+            </div>
           </div>
         </section>
 
         {/* 8. Before/After */}
-        <section className="section ba-section">
-          <div className="section-inner">
-            <h2 className="ba-title">같은 키워드, 다른 결과</h2>
-            <div className="ba-grid">
-              <div className="ba-card before">
-                <p className="ba-label">Before &middot; 직접 쓴 글</p>
-                <h3>&ldquo;OO동 네일샵 추천&rdquo;</h3>
-                <p className="ba-text">
-                  &middot; 키워드 감으로 선택<br />
-                  &middot; 글 구조 없이 그냥 작성<br />
-                  &middot; 1시간 이상 소요<br />
-                  &middot; 검색 결과 3페이지<br />
-                  &middot; 유입 거의 없음
-                </p>
+        {/* 8. Before/After - 카드뉴스 스타일 */}
+        <section style={{ padding: '100px 24px', background: '#FAFAFA' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Before vs After</p>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.2rem)', fontWeight: 900, lineHeight: 1.4, marginBottom: '40px' }}>
+              같은 키워드,<br /><span style={{ color: 'var(--accent)' }}>다른 결과</span>
+            </h2>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ background: '#1a1a1a', color: '#fff', borderRadius: '20px', padding: '28px 24px', textAlign: 'left' }}>
+                <p style={{ fontSize: '0.75rem', fontWeight: 700, color: '#FF7A7A', letterSpacing: '1px', marginBottom: '8px' }}>BEFORE · 직접 쓴 글</p>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 900, marginBottom: '16px', lineHeight: 1.4 }}>
+                  &ldquo;OO동 네일샵 추천&rdquo;
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.95rem', lineHeight: 2, color: 'rgba(255,255,255,0.7)' }}>
+                  <li>❌ 키워드 감으로 선택</li>
+                  <li>❌ 글 구조 없이 작성</li>
+                  <li>❌ 1시간+ 소요</li>
+                  <li>❌ 검색 결과 3페이지</li>
+                  <li>❌ 유입 거의 없음</li>
+                </ul>
               </div>
-              <div className="ba-card after">
-                <p className="ba-label">After &middot; 블로그라이터</p>
-                <h3>&ldquo;OO동 네일샵 잘하는 곳&rdquo;</h3>
-                <p className="ba-text">
-                  &middot; 키워드 자동 분석<br />
-                  &middot; 상위노출 구조 자동 설계<br />
-                  &middot; 3분 만에 완성<br />
-                  &middot; 검색 결과 1페이지<br />
-                  &middot; 실제 예약 문의 발생
-                </p>
+
+              <div style={{ textAlign: 'center', padding: '4px 0', color: 'var(--accent)', fontSize: '1.6rem' }}>↓</div>
+
+              <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', color: '#fff', borderRadius: '20px', padding: '28px 24px', textAlign: 'left', boxShadow: '0 12px 30px rgba(42,95,255,0.3)' }}>
+                <p style={{ fontSize: '0.75rem', fontWeight: 700, opacity: 0.9, letterSpacing: '1px', marginBottom: '8px' }}>AFTER · 블로그라이터</p>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 900, marginBottom: '16px', lineHeight: 1.4 }}>
+                  &ldquo;OO동 네일샵 잘하는 곳&rdquo;
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.95rem', lineHeight: 2 }}>
+                  <li>✅ 키워드 자동 분석</li>
+                  <li>✅ 상위노출 구조 자동 설계</li>
+                  <li>✅ 3분 만에 완성</li>
+                  <li>✅ 검색 결과 1페이지</li>
+                  <li>✅ 실제 예약 문의 발생</li>
+                </ul>
               </div>
             </div>
-            <p className="ba-verdict">배운 사람과 도구를 쓴 사람, 결과가 다릅니다.</p>
+
+            <div style={{ marginTop: '32px', padding: '24px 20px', background: '#fff', border: '1px solid var(--border)', borderRadius: '16px' }}>
+              <p style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--text)', lineHeight: 1.6 }}>
+                배운 사람과 <strong style={{ color: 'var(--accent)' }}>도구를 쓴 사람,</strong><br />
+                결과가 다릅니다.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* 9. GPT 비교 */}
-        <section className="section diff-section">
-          <div className="section-inner">
-            <h2 className="diff-title">&ldquo;GPT 쓰면 되지 않나요?&rdquo;</h2>
-            <div className="diff-table">
-              <div className="diff-card gpt">
-                <h3>ChatGPT</h3>
-                <p>글을 만들어주는 도구<br /><br />키워드 분석 없음<br />네이버 로직 모름<br />상위노출 안 됨<br />결국 수정은 내가 해야 함</p>
+        {/* 9. GPT 비교 - 카드뉴스 스타일 */}
+        <section style={{ padding: '100px 24px', background: '#fff', borderBottom: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '12px', lineHeight: 1 }}>🤖</div>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.2rem)', fontWeight: 900, lineHeight: 1.4, marginBottom: '40px' }}>
+              &ldquo;GPT 쓰면<br /><span style={{ color: 'var(--accent)' }}>되지 않나요?&rdquo;</span>
+            </h2>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ background: '#F5F5F5', border: '1px solid var(--border)', borderRadius: '20px', padding: '28px 24px', textAlign: 'left' }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 900, marginBottom: '16px', color: 'var(--text-sub)' }}>ChatGPT</h3>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-sub)', marginBottom: '16px', fontWeight: 600 }}>글을 <strong>만들어주는 도구</strong></p>
+                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.95rem', lineHeight: 2, color: 'var(--text-sub)' }}>
+                  <li>❌ 키워드 분석 없음</li>
+                  <li>❌ 네이버 로직 모름</li>
+                  <li>❌ 상위노출 안 됨</li>
+                  <li>❌ 결국 수정은 내가</li>
+                </ul>
               </div>
-              <div className="diff-card ours">
-                <h3>블로그라이터</h3>
-                <p>상위노출되는 글을 만드는 도구<br /><br />키워드 자동 분석<br />네이버 C-RANK 반영<br />상위노출 구조 적용<br />수정 없이 바로 발행 가능</p>
+
+              <div style={{ background: 'linear-gradient(135deg, #1a1a1a 0%, #2A5FFF 100%)', color: '#fff', borderRadius: '20px', padding: '28px 24px', textAlign: 'left', boxShadow: '0 12px 30px rgba(42,95,255,0.25)' }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 900, marginBottom: '16px' }}>블로그라이터</h3>
+                <p style={{ fontSize: '0.9rem', opacity: 0.95, marginBottom: '16px', fontWeight: 600 }}>상위노출되는 글을 <strong>만드는 도구</strong></p>
+                <ul style={{ listStyle: 'none', padding: 0, fontSize: '0.95rem', lineHeight: 2 }}>
+                  <li>✅ 키워드 자동 분석</li>
+                  <li>✅ 네이버 C-RANK 반영</li>
+                  <li>✅ 상위노출 구조 적용</li>
+                  <li>✅ 수정 없이 바로 발행</li>
+                </ul>
               </div>
             </div>
-            <p className="diff-bottom">GPT는 &ldquo;글&rdquo;을 써주고, 블로그라이터는 &ldquo;결과&rdquo;를 만들어줍니다.</p>
+
+            <div style={{ marginTop: '32px', padding: '24px 20px', background: '#1a1a1a', color: '#fff', borderRadius: '16px' }}>
+              <p style={{ fontSize: '1.05rem', fontWeight: 800, lineHeight: 1.7 }}>
+                GPT는 <span style={{ color: '#FF7A7A' }}>&ldquo;글&rdquo;</span>을 써주고,<br />
+                블로그라이터는 <span style={{ color: 'var(--accent)' }}>&ldquo;결과&rdquo;</span>를 만들어줍니다.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -684,33 +761,65 @@ export default function BlogwriterPage() {
           </div>
         </section>
 
-        {/* 12. 타겟 */}
-        <section className="section target-section">
-          <div className="section-inner">
-            <h2 className="target-title">이런 분이라면, 더 이상 고민하지 마세요.</h2>
-            <div className="target-list">
-              <div className="target-item">블로그 강의 들었는데 실행이 안 되는 분</div>
-              <div className="target-item">본업이 바빠서 글 쓸 시간이 없는 분</div>
-              <div className="target-item">GPT로 써봤는데 네이버에 안 뜨는 분</div>
-              <div className="target-item">블로그 해야 하는 건 아는데 계속 미루는 분</div>
+        {/* 12. 타겟 - 카드뉴스 스타일 */}
+        <section style={{ padding: '100px 24px', background: 'linear-gradient(180deg, #FAFAFA 0%, #fff 100%)' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>For You</p>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.2rem)', fontWeight: 900, lineHeight: 1.4, marginBottom: '12px' }}>
+              이런 분이라면<br />
+              <span style={{ background: 'linear-gradient(120deg, transparent 60%, #FFE066 60%)' }}>더 이상 고민하지 마세요.</span>
+            </h2>
+            <p style={{ fontSize: '1rem', color: 'var(--text-sub)', marginBottom: '40px' }}>해당되는 거 1개라도 있으면 무료로 써보세요.</p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                { emoji: '📚', text: '블로그 강의 들었는데 실행이 안 되는 분' },
+                { emoji: '💆‍♀️', text: '본업이 바빠서 글 쓸 시간이 없는 분' },
+                { emoji: '🤖', text: 'GPT로 써봤는데 네이버에 안 뜨는 분' },
+                { emoji: '😅', text: '블로그 해야 하는 건 아는데 계속 미루는 분' },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  background: '#fff',
+                  border: '1px solid var(--border)',
+                  borderRadius: '14px',
+                  padding: '18px 22px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '16px',
+                  textAlign: 'left',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                }}>
+                  <div style={{ fontSize: '2rem', flexShrink: 0 }}>{item.emoji}</div>
+                  <p style={{ flex: 1, fontSize: '1rem', fontWeight: 600, color: 'var(--text)', lineHeight: 1.5 }}>{item.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* 11. 최종 CTA */}
-        <section className="section cta-section">
-          <div className="section-inner">
-            <p className="cta-sub">블로그, 이제 배우지 마세요.</p>
-            <p className="cta-title">그냥 쓰세요.</p>
-            <p className="cta-highlight">&ldquo;배울 시간에 <em>글 하나 더 올리세요.</em>&rdquo;</p>
-            <div style={{ margin: '32px 0' }}>
-              <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>월 19,900원</span>
-              <span style={{ display: 'block', fontSize: '2.2rem', fontWeight: 900, color: '#FF4444', marginTop: '4px' }}>SALE 월 9,900원</span>
-              <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>베타 기간 한정 가격</span>
+        {/* 11. 최종 CTA - 카드뉴스 스타일 */}
+        <section style={{ padding: '100px 24px', background: 'var(--bg-dark)', color: '#fff', textAlign: 'center' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto' }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.6)', marginBottom: '8px' }}>블로그, 이제</p>
+            <h2 style={{ fontSize: 'clamp(2.4rem, 7vw, 3.5rem)', fontWeight: 900, lineHeight: 1.2, marginBottom: '20px' }}>
+              <span style={{ textDecoration: 'line-through', color: 'rgba(255,255,255,0.4)' }}>배우지</span> 마세요.<br />
+              <span style={{ background: 'var(--accent)', padding: '4px 18px', borderRadius: '12px', display: 'inline-block', marginTop: '12px' }}>그냥 쓰세요.</span>
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, marginBottom: '40px' }}>
+              &ldquo;배울 시간에<br /><strong style={{ color: '#fff' }}>글 하나 더 올리세요.</strong>&rdquo;
+            </p>
+
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '20px', padding: '32px 24px', marginBottom: '24px' }}>
+              <span style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>월 19,900원</span>
+              <p style={{ fontSize: 'clamp(2.4rem, 8vw, 3rem)', fontWeight: 900, color: '#FF4444', lineHeight: 1.1, marginTop: '4px' }}>
+                월 9,900<span style={{ fontSize: '1.4rem' }}>원</span>
+              </p>
+              <p style={{ fontSize: '0.85rem', color: '#FFD700', fontWeight: 700, marginTop: '8px' }}>🔥 SALE · 베타 기간 한정</p>
               <SlotCounter variant="cta" />
             </div>
+
             <a href="https://www.blogwriter.co.kr" target="_blank" rel="noopener noreferrer" className="btn-main">무료로 3번 써보기 &rarr;</a>
-            <p className="cta-note">가입 즉시 하루 3회 무료 생성 &middot; 카드 등록 없음</p>
+            <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '16px' }}>가입 즉시 하루 3회 무료 생성 · 카드 등록 없음</p>
           </div>
         </section>
 
