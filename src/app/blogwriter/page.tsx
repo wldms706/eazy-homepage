@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CounterAnimation, ReviewImageSlider, FloatingCTA } from "./BlogwriterClient";
 import SlotCounter from "./SlotCounter";
+import BlogRankSlider from "./BlogRankSlider";
 
 export const metadata: Metadata = {
   title: "블로그라이터 - 뷰티샵 블로그·네이버 홍보 자동 글쓰기",
@@ -295,6 +296,21 @@ export default function BlogwriterPage() {
           </div>
           <ReviewImageSlider />
           <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--text-sub)', marginTop: '24px' }}>※ 개인정보 보호를 위해 일부 정보는 가려져 있습니다.</p>
+        </section>
+
+        {/* 1-1-1. 실제 상위노출 증거 캐러셀 */}
+        <section style={{ padding: '80px 0 60px', background: '#fff', borderBottom: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 24px', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>Real Proof</p>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2rem)', fontWeight: 900, marginBottom: '12px', lineHeight: 1.4 }}>
+              실제로 <span style={{ color: 'var(--accent)' }}>상위노출</span>되고 있어요
+            </h2>
+            <p style={{ color: 'var(--text-sub)', marginBottom: '8px', lineHeight: 1.8 }}>
+              "말로만 1위" 아니에요. 직접 검색해서 캡쳐했습니다.
+            </p>
+          </div>
+          <BlogRankSlider />
+          <p style={{ textAlign: 'center', fontSize: '0.85rem', color: 'var(--text-sub)', marginTop: '8px' }}>네이버 블로그 검색 결과 ✦ 실제 캡쳐</p>
         </section>
 
         {/* 1-2. 매출 흐름 - 5단계 */}
