@@ -242,6 +242,7 @@ export default function CoachingPage() {
                 { src: '/coaching-videos/coach-5.mp4', name: 'F 원장님' },
                 { src: '/coaching-videos/coach-6.mp4', name: 'G 원장님' },
                 { src: '/coaching-videos/coach-7.mp4', name: 'H 원장님' },
+                { src: '/coaching-videos/coach-8.mp4', name: 'I 원장님' },
               ].map((v) => (
                 <div key={v.src} style={{ borderRadius: '12px', overflow: 'hidden', background: '#000' }}>
                   <video src={v.src} autoPlay loop muted playsInline style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', display: 'block' }} />
