@@ -264,7 +264,10 @@ export default function BlogwriterPage() {
             <h1 className="hero-headline">
               <em>절대 놓칠 수 없는</em><br />네이버 블로그 마케팅
             </h1>
-            <p className="hero-desc">네이버 상위노출, 하고 싶지 않으세요?<br /><strong style={{ color: '#fff' }}>이제 누구나 할 수 있습니다.</strong></p>
+            <p className="hero-desc">
+              네이버 상위노출하면<br />
+              <strong style={{ color: '#fff', fontSize: '1.2rem' }}>원장님 샵 매출이 2배 올라갑니다.</strong>
+            </p>
             <div className="hero-cta-wrap">
               <div style={{ marginBottom: '16px' }}>
                 <span style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'line-through' }}>월 19,900원</span>
@@ -388,44 +391,99 @@ export default function BlogwriterPage() {
           </div>
         </section>
 
-        {/* 3. 문제 */}
-        <section className="section problem-section">
-          <div className="section-inner">
-            <h2 className="problem-title">근데 솔직히,<br />가르치면서 계속 느꼈습니다.</h2>
-            <p className="problem-sub">원장님들이 힘들어하는 건 &ldquo;몰라서&rdquo;가 아니었어요.</p>
-            <ul className="problem-list">
-              <li>방법은 알겠는데, 쓸 시간이 없다</li>
-              <li>본업(시술)에 집중하기도 바쁘다</li>
-              <li>매일 글 쓰는 게 결국 지친다</li>
-              <li>GPT로 뽑아봐도 네이버에선 안 먹힌다</li>
-            </ul>
-            <div className="problem-quote">
-              결국 배워도 &ldquo;<em>실행이 안 되면</em> 의미가 없더라고요&rdquo;
+        {/* 3. 문제 - 카드뉴스 스타일 */}
+        <section style={{ padding: '100px 24px', background: 'linear-gradient(180deg, #fff 0%, #F5F5F5 100%)', borderBottom: '1px solid var(--border)' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ fontSize: '3.5rem', marginBottom: '16px', lineHeight: 1 }}>🤔</div>
+            <p style={{ fontSize: '1rem', color: 'var(--text-sub)', marginBottom: '8px' }}>가르치면서 계속 느꼈어요</p>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.2rem)', fontWeight: 900, lineHeight: 1.4, color: 'var(--text)', marginBottom: '40px' }}>
+              원장님들이 힘들어하는 건<br />
+              <span style={{ background: 'linear-gradient(120deg, transparent 60%, #FFE066 60%)' }}>&ldquo;몰라서&rdquo;가 아니에요</span>
+            </h2>
+
+            {/* 말풍선 */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '40px' }}>
+              <div style={{ alignSelf: 'flex-start', maxWidth: '85%', background: '#1a1a1a', color: '#fff', padding: '16px 22px', borderRadius: '20px 20px 20px 4px', fontSize: '1rem', fontWeight: 500, lineHeight: 1.5, textAlign: 'left' }}>
+                방법은 아는데<br /><span style={{ color: '#7AB8FF' }}>쓸 시간이 없어요</span>
+              </div>
+              <div style={{ alignSelf: 'flex-end', maxWidth: '85%', background: '#1a1a1a', color: '#fff', padding: '16px 22px', borderRadius: '20px 20px 4px 20px', fontSize: '1rem', fontWeight: 500, lineHeight: 1.5, textAlign: 'left' }}>
+                본업(시술)도<br /><span style={{ color: '#7AB8FF' }}>바빠 죽겠어요</span>
+              </div>
+              <div style={{ alignSelf: 'flex-start', maxWidth: '85%', background: '#1a1a1a', color: '#fff', padding: '16px 22px', borderRadius: '20px 20px 20px 4px', fontSize: '1rem', fontWeight: 500, lineHeight: 1.5, textAlign: 'left' }}>
+                매일 글 쓰는 게<br /><span style={{ color: '#7AB8FF' }}>결국 지쳐요</span>
+              </div>
+              <div style={{ alignSelf: 'flex-end', maxWidth: '85%', background: '#1a1a1a', color: '#fff', padding: '16px 22px', borderRadius: '20px 20px 4px 20px', fontSize: '1rem', fontWeight: 500, lineHeight: 1.5, textAlign: 'left' }}>
+                GPT로 뽑아봐도<br /><span style={{ color: '#7AB8FF' }}>네이버엔 안 먹혀요</span>
+              </div>
             </div>
-            <div style={{ textAlign: 'center', marginTop: '32px', padding: '28px 24px', background: 'var(--accent)', borderRadius: '16px', color: '#fff' }}>
-              <p style={{ fontSize: '1.3rem', fontWeight: 900, lineHeight: 1.6, margin: 0 }}>
-                원장님은 시술에 집중하세요. 마케팅은 도구에 맡기는 게 맞습니다.
+
+            <div style={{ background: '#1a1a1a', color: '#fff', padding: '24px 20px', borderRadius: '20px', marginBottom: '24px' }}>
+              <p style={{ fontSize: '1.15rem', fontWeight: 800, lineHeight: 1.6 }}>
+                결국 배워도<br />
+                &ldquo;<span style={{ color: 'var(--accent)' }}>실행이 안 되면</span> 의미가 없더라고요&rdquo;
+              </p>
+            </div>
+
+            <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '20px', padding: '36px 24px', boxShadow: '0 12px 30px rgba(42,95,255,0.25)' }}>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.8)', fontWeight: 700, letterSpacing: '1px', marginBottom: '12px' }}>핵심</p>
+              <p style={{ fontSize: 'clamp(1.2rem, 3.5vw, 1.5rem)', fontWeight: 900, color: '#fff', lineHeight: 1.5 }}>
+                원장님은 <span style={{ background: '#fff', color: '#2A5FFF', padding: '2px 10px', borderRadius: '8px' }}>시술</span>에<br />집중하세요.
+              </p>
+              <p style={{ fontSize: '1rem', fontWeight: 700, color: '#fff', marginTop: '16px', lineHeight: 1.6, opacity: 0.95 }}>
+                마케팅은 <strong style={{ background: '#fff', color: '#2A5FFF', padding: '2px 10px', borderRadius: '8px' }}>도구</strong>에 맡기는 게 맞아요.
               </p>
             </div>
           </div>
         </section>
 
-        {/* 4. 그래서 만들었다 */}
-        <section className="section solution-section">
-          <div className="section-inner">
-            <h2 className="solution-title">그래서 제가<br />직접 만들었습니다.</h2>
-            <p className="solution-desc">
-              가르치는 것만으로는 부족했습니다.<br />
-              원장님이 배우지 않아도,<br />
-              <strong>그냥 쓰기만 하면 되는 도구</strong>가 필요했어요.
+        {/* 4. 그래서 만들었다 - 카드뉴스 스타일 */}
+        <section style={{ padding: '100px 24px', background: '#1a1a1a', color: '#fff' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>So I Built It</p>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', fontWeight: 900, lineHeight: 1.3, marginBottom: '32px' }}>
+              그래서 제가<br />
+              <span style={{ background: 'var(--accent)', padding: '4px 14px', borderRadius: '10px', display: 'inline-block', marginTop: '8px' }}>직접 만들었습니다</span>
+            </h2>
+
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.7)', lineHeight: 2, marginBottom: '40px' }}>
+              가르치는 것만으로는 부족했어요.<br />
+              원장님이 <strong style={{ color: '#fff' }}>배우지 않아도,</strong><br />
+              <strong style={{ color: 'var(--accent)' }}>그냥 쓰기만 하면 되는 도구</strong>가 필요했습니다.
             </p>
-            <div className="solution-features">
-              <div className="solution-feature">7년간 제가 직접 쓴 블로그 노하우</div>
-              <div className="solution-feature">100명 가르치며 정리한 상위노출 공식</div>
-              <div className="solution-feature">네이버 C-RANK 알고리즘 반영</div>
-              <div className="solution-feature">이 모든 걸 AI에 넣었습니다</div>
+
+            {/* 4가지 강점 카드 */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
+              {[
+                { num: '01', title: '7년간 직접 쓴 블로그 노하우', emoji: '📝' },
+                { num: '02', title: '100명+ 가르치며 정리한 공식', emoji: '👥' },
+                { num: '03', title: '네이버 C-RANK 알고리즘 반영', emoji: '🔍' },
+                { num: '04', title: '이 모든 걸 AI에 넣었습니다', emoji: '🤖' },
+              ].map((item) => (
+                <div key={item.num} style={{
+                  background: 'rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  borderRadius: '16px',
+                  padding: '20px 22px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '16px',
+                  textAlign: 'left',
+                }}>
+                  <div style={{ fontSize: '2rem', flexShrink: 0 }}>{item.emoji}</div>
+                  <div style={{ flex: 1 }}>
+                    <p style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '1px', marginBottom: '4px' }}>NO. {item.num}</p>
+                    <p style={{ fontSize: '1rem', fontWeight: 700, color: '#fff' }}>{item.title}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="solution-highlight">배우지 마세요. <br />그냥 <strong>쓰세요.</strong></div>
+
+            <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '24px', padding: '40px 24px', boxShadow: '0 20px 50px rgba(42,95,255,0.4)' }}>
+              <p style={{ fontSize: 'clamp(2rem, 6vw, 2.8rem)', fontWeight: 900, lineHeight: 1.3, color: '#fff' }}>
+                배우지 마세요.<br />
+                <span style={{ background: '#1a1a1a', padding: '6px 18px', borderRadius: '12px', display: 'inline-block', marginTop: '12px' }}>그냥 쓰세요.</span>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -437,47 +495,61 @@ export default function BlogwriterPage() {
           </div>
         </section>
 
-        {/* 6. 데모 */}
-        <section className="section demo-section">
-          <div className="section-inner">
-            <h2 className="demo-title">이렇게 간단합니다.</h2>
-            <p className="demo-sub">배울 필요 없어요. 누르기만 하세요.</p>
-            <div style={{ marginBottom: '48px', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+        {/* 6. 데모 - 카드뉴스 스타일 */}
+        <section style={{ padding: '100px 24px', background: 'linear-gradient(180deg, #fff 0%, #EBF1FF 100%)' }}>
+          <div style={{ maxWidth: '480px', margin: '0 auto', textAlign: 'center' }}>
+            <p style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '12px' }}>How To Use</p>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 5vw, 2.5rem)', fontWeight: 900, lineHeight: 1.3, marginBottom: '12px' }}>
+              이렇게 <span style={{ color: 'var(--accent)' }}>간단합니다.</span>
+            </h2>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-sub)', marginBottom: '40px' }}>
+              배울 필요 없어요. <strong style={{ color: 'var(--text)' }}>누르기만 하세요.</strong>
+            </p>
+
+            <div style={{ marginBottom: '40px', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 12px 40px rgba(0,0,0,0.15)' }}>
               <video autoPlay loop muted playsInline style={{ width: '100%', display: 'block' }}>
                 <source src="/images/demo.mp4" type="video/mp4" />
               </video>
             </div>
-            <div className="demo-steps">
-              <div className="demo-step">
-                <div className="demo-step-num">1</div>
-                <div className="demo-step-content">
-                  <h3>키워드 입력</h3>
-                  <p>&ldquo;홍대 네일샵&rdquo;, &ldquo;강남 피부관리&rdquo; 같은 내 업종 키워드만 입력하세요</p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                { num: '01', emoji: '⌨️', title: '키워드 입력', desc: '"홍대 네일샵", "강남 피부관리"' },
+                { num: '02', emoji: '🤖', title: 'AI가 자동 설계', desc: '7년간 쌓은 상위노출 공식 자동 적용' },
+                { num: '03', emoji: '📝', title: '제목 + 본문 완성', desc: 'SEO 최적화 + 2,000자 본문' },
+                { num: '04', emoji: '✅', title: '복사해서 올리기', desc: '네이버 블로그에 붙여넣기. 끝.' },
+              ].map((step, i, arr) => (
+                <div key={step.num}>
+                  <div style={{
+                    background: '#fff',
+                    border: '1px solid var(--border)',
+                    borderRadius: '16px',
+                    padding: '20px 22px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '16px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                    textAlign: 'left',
+                  }}>
+                    <div style={{ fontSize: '2rem', flexShrink: 0 }}>{step.emoji}</div>
+                    <div style={{ flex: 1 }}>
+                      <p style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '1px', marginBottom: '4px' }}>STEP {step.num}</p>
+                      <h3 style={{ fontSize: '1.05rem', fontWeight: 900, marginBottom: '4px', color: 'var(--text)' }}>{step.title}</h3>
+                      <p style={{ fontSize: '0.85rem', color: 'var(--text-sub)' }}>{step.desc}</p>
+                    </div>
+                  </div>
+                  {i < arr.length - 1 && (
+                    <div style={{ textAlign: 'center', padding: '4px 0', color: 'var(--accent)', fontSize: '1.4rem', fontWeight: 700 }}>↓</div>
+                  )}
                 </div>
-              </div>
-              <div className="demo-step">
-                <div className="demo-step-num">2</div>
-                <div className="demo-step-content">
-                  <h3>AI가 알아서 설계</h3>
-                  <p>제가 7년간 쌓은 상위노출 공식을 AI가 자동으로 적용합니다</p>
-                </div>
-              </div>
-              <div className="demo-step">
-                <div className="demo-step-num">3</div>
-                <div className="demo-step-content">
-                  <h3>제목 + 본문 완성</h3>
-                  <p>SEO 최적화된 제목과 2,000자 이상의 본문이 완성</p>
-                </div>
-              </div>
-              <div className="demo-step">
-                <div className="demo-step-num">4</div>
-                <div className="demo-step-content">
-                  <h3>복사해서 올리기</h3>
-                  <p>네이버 블로그에 붙여넣기. 끝.</p>
-                </div>
-              </div>
+              ))}
             </div>
-            <div className="demo-time">총 소요 시간: <em>약 3분</em></div>
+
+            <div style={{ marginTop: '32px', padding: '20px 24px', background: '#1a1a1a', color: '#fff', borderRadius: '100px', display: 'inline-block' }}>
+              <p style={{ fontSize: '1rem', fontWeight: 700 }}>
+                ⏱️ 총 소요 시간 <span style={{ color: 'var(--accent)', fontSize: '1.2rem', fontWeight: 900 }}>약 3분</span>
+              </p>
+            </div>
           </div>
         </section>
 
