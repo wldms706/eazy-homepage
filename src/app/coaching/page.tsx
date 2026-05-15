@@ -246,9 +246,6 @@ export default function CoachingPage() {
                 </div>
               ))}
             </div>
-            <div className="blue-box" style={{ marginTop: '32px' }}>
-              "이런 콘텐츠 4개 + 광고 세팅"이 다 포함됩니다.
-            </div>
           </div>
         </section>
 
