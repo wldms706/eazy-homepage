@@ -3,7 +3,7 @@ import { createAdminClient } from '@/lib/supabase/admin';
 
 const TOTAL_SLOTS = 100;
 // 기본 차지된 자리 (결제 라이브 키 발급 전 임시 - 가입자 늘면 같이 줄어듦)
-const BASE_TAKEN = 42;
+const BASE_TAKEN = 67;
 
 export async function GET() {
   try {
