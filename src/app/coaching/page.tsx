@@ -288,14 +288,24 @@ export default function CoachingPage() {
 
         {/* 해답 시작 */}
         <section className="sec" style={{ background: '#fff' }}>
-          <div className="inner" style={{ textAlign: 'center' }}>
-            <p style={{ fontSize: '1.1rem', color: 'var(--text-sub)', lineHeight: 2, marginBottom: '24px' }}>
-              아니에요. 🙅‍♀️
-            </p>
-            <h2 className="title" style={{ marginBottom: '16px' }}>
+          <div className="inner" style={{ textAlign: 'center', maxWidth: '480px' }}>
+            <div style={{ fontSize: '3rem', marginBottom: '12px', lineHeight: 1 }}>🙅‍♀️</div>
+            <h2 className="title" style={{ marginBottom: '24px' }}>
+              아니에요.<br />
+              <span style={{ background: 'linear-gradient(120deg, transparent 60%, #FFE066 60%)' }}>1도 모르셔도 됩니다.</span>
+            </h2>
+            <div style={{ background: 'linear-gradient(135deg, #2A5FFF 0%, #5B82FF 100%)', borderRadius: '20px', padding: '32px 24px', color: '#fff', boxShadow: '0 12px 30px rgba(42,95,255,0.25)', marginBottom: '32px' }}>
+              <p style={{ fontSize: '0.85rem', fontWeight: 700, opacity: 0.85, letterSpacing: '1px', marginBottom: '12px' }}>실행메이킹 취지</p>
+              <p style={{ fontSize: 'clamp(1.2rem, 3.5vw, 1.5rem)', fontWeight: 900, lineHeight: 1.6 }}>
+                돈을 벌 수 있는<br />
+                <span style={{ background: '#fff', color: '#2A5FFF', padding: '2px 12px', borderRadius: '8px', display: 'inline-block', marginTop: '8px' }}>루트</span>를<br />
+                <strong style={{ fontSize: '1.1em' }}>모두 알려드립니다.</strong>
+              </p>
+            </div>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-sub)', lineHeight: 1.9, marginBottom: '24px' }}>
               릴스만 찍어도, 광고만 돌려도,<br />
               홈페이지만 만들어도 안 됩니다.
-            </h2>
+            </p>
             <div className="dark-box">
               모든 건 연결된 <em>매출 구조</em> 안에서<br />움직여야 작동합니다.
             </div>
