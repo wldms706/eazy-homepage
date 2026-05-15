@@ -232,10 +232,12 @@ export default function CoachingPage() {
               알려주고 끝이 아니라, 광고용 콘텐츠를 직접 기획·촬영·편집해드립니다.<br />
               실제 원장님들 매장에서 만든 영상이에요.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', maxWidth: '500px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', maxWidth: '760px', margin: '0 auto' }}>
               {[
                 { src: '/coaching-videos/daehang.mp4', name: 'A 원장님' },
                 { src: '/coaching-videos/coach-new.mp4', name: 'B 원장님' },
+                { src: '/coaching-videos/coach-2.mp4', name: 'C 원장님' },
+                { src: '/coaching-videos/coach-3.mp4', name: 'D 원장님' },
               ].map((v) => (
                 <div key={v.src} style={{ borderRadius: '12px', overflow: 'hidden', background: '#000' }}>
                   <video src={v.src} autoPlay loop muted playsInline style={{ width: '100%', aspectRatio: '9/16', objectFit: 'cover', display: 'block' }} />
