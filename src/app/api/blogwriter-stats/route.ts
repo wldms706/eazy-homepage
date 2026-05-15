@@ -2,26 +2,25 @@ import { NextResponse } from 'next/server';
 import { createAdminClient } from '@/lib/supabase/admin';
 
 const TOTAL_SLOTS = 100;
-// 기본 차지된 자리
+// 결제 회원 수 + 베이스 (런칭 직후 임시, 실제 결제자 늘면 같이 늘어남)
 const BASE_TAKEN = 25;
-// 가입자 수 가중치 (100명 가입해도 20명만 차지로 카운트)
-const SIGNUP_WEIGHT = 0.2;
-// 최소 남은 자리 (긴급성 유지하되 0명은 안 됨)
-const MIN_REMAINING = 12;
+const MIN_REMAINING = 5;
 
 export async function GET() {
   try {
     const supabase = createAdminClient();
 
+    // 토스페이먼츠로 실제 결제 완료된 활성 구독자 수 카운트
     const { count, error } = await supabase
-      .from('profiles')
-      .select('id', { count: 'exact', head: true });
+      .from('subscriptions')
+      .select('id', { count: 'exact', head: true })
+      .eq('status', 'active');
 
     if (error) throw error;
 
-    const signups = count || 0;
-    const weightedSignups = Math.floor(signups * SIGNUP_WEIGHT);
-    const subscribers = Math.min(TOTAL_SLOTS - MIN_REMAINING, BASE_TAKEN + weightedSignups);
+    const paidSubscribers = count || 0;
+    // 실제 결제자 + 베이스
+    const subscribers = Math.min(TOTAL_SLOTS - MIN_REMAINING, BASE_TAKEN + paidSubscribers);
     const remainingSlots = TOTAL_SLOTS - subscribers;
     const percentageTaken = Math.round((subscribers / TOTAL_SLOTS) * 100);
 
@@ -30,6 +29,8 @@ export async function GET() {
       subscribers,
       remaining: remainingSlots,
       percentageTaken,
+      // 디버깅용 (브라우저 콘솔에서 확인 가능)
+      _real: paidSubscribers,
     }, {
       headers: {
         'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=120',
