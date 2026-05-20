@@ -26,18 +26,15 @@ export default function MobileMenu() {
           display: "none",
           alignItems: "center",
           gap: "6px",
-          color: "#1a1a1a",
+          color: "#fff",
           fontSize: "0.8rem",
           fontWeight: 700,
-          background: "none",
-          border: "none",
-          cursor: "pointer",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
-          <span style={{ background: '#1a1a1a' }}></span>
-          <span style={{ background: '#1a1a1a' }}></span>
-          <span style={{ background: '#1a1a1a' }}></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
         메뉴
       </button>
