@@ -44,8 +44,8 @@ export default function MobileMenu() {
           <a href="#services" onClick={toggleMenu}>
             서비스
           </a>
-          <a href="#reviews" onClick={toggleMenu}>
-            후기
+          <a href="/live-reviews" onClick={toggleMenu}>
+            라이브 후기
           </a>
           <a href="/resources" onClick={toggleMenu}>
             무료자료

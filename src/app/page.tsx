@@ -3,6 +3,7 @@ import HeaderScroll from "./components/HeaderScroll";
 import ResourceSlider from "./components/ResourceSlider";
 import ReviewSlider from "./components/ReviewSlider";
 import AuthButton from "@/components/AuthButton";
+import LiveReviewPreview from "./components/LiveReviewPreview";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
           </a>
           <nav className="nav">
             <a href="#services">서비스</a>
-            <a href="#reviews">후기</a>
+            <a href="/live-reviews">라이브 후기</a>
             <a href="/resources">무료자료</a>
             <a href="/columns">인사이트 칼럼</a>
             <a href="/about">소개</a>
@@ -292,6 +293,9 @@ export default function Home() {
 
       {/* Reviews Section */}
       <ReviewSlider />
+
+      {/* 라이브 후기 미리보기 */}
+      <LiveReviewPreview />
 
       {/* 인사이트 칼럼 */}
       <section style={{ padding: "80px 0", background: "#FAFAFA" }}>
