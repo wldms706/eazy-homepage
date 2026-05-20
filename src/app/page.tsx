@@ -10,26 +10,56 @@ export default function Home() {
     <>
       <HeaderScroll />
 
-      {/* Header */}
-      <header className="header">
-        <div className="header-inner">
-          <a href="#" className="logo">
-            EAZY.
-          </a>
-          <nav className="nav">
-            <a href="#services">서비스</a>
-            <a href="/live-reviews">라이브 후기</a>
-            <a href="/resources">무료자료</a>
-            <a href="/columns">인사이트 칼럼</a>
-            <a href="/about">소개</a>
+      {/* Header - 미니멀 */}
+      <header style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
+        background: 'rgba(255,255,255,0.85)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid #EBEBEB',
+      }}>
+        <div style={{
+          maxWidth: 1100,
+          margin: '0 auto',
+          padding: '0 24px',
+          height: '64px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+          <a href="#" style={{
+            fontSize: '1.2rem',
+            fontWeight: 900,
+            color: '#1a1a1a',
+            textDecoration: 'none',
+            letterSpacing: '-0.02em',
+          }}>EAZY.</a>
+          <nav className="nav" style={{ gap: '36px' }}>
+            <a href="#services" style={{ color: '#1a1a1a', fontWeight: 500 }}>서비스</a>
+            <a href="/live-reviews" style={{ color: '#1a1a1a', fontWeight: 500 }}>라이브 후기</a>
+            <a href="/resources" style={{ color: '#1a1a1a', fontWeight: 500 }}>무료자료</a>
+            <a href="/columns" style={{ color: '#1a1a1a', fontWeight: 500 }}>인사이트 칼럼</a>
+            <a href="/about" style={{ color: '#1a1a1a', fontWeight: 500 }}>소개</a>
           </nav>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <AuthButton />
             <a
               href="http://pf.kakao.com/_yCZQn"
               target="_blank"
               rel="noopener noreferrer"
-              className="header-cta"
+              style={{
+                fontSize: '0.85rem',
+                fontWeight: 700,
+                color: '#fff',
+                background: '#1a1a1a',
+                padding: '10px 20px',
+                borderRadius: '100px',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+              }}
             >
               무료 상담
             </a>
@@ -39,51 +69,91 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-inner">
-          <div className="hero-text">
-            <p className="hero-tag">혼자서도 살아남는 매출 구조</p>
-            <h1 className="hero-headline">
-              Make it
-              <br />
-              <span className="hero-accent">EAZY</span>
+      {/* Hero - 미니멀 */}
+      <section style={{
+        background: '#fff',
+        padding: '160px 24px 100px',
+        borderBottom: '1px solid #EBEBEB',
+      }}>
+        <div style={{
+          maxWidth: 1100,
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '60px',
+          alignItems: 'center',
+        }}>
+          <div>
+            <p style={{
+              fontSize: '0.85rem',
+              fontWeight: 500,
+              color: '#666',
+              letterSpacing: '2px',
+              textTransform: 'uppercase',
+              marginBottom: '24px',
+            }}>EAZY — Sales Structure</p>
+            <h1 style={{
+              fontSize: 'clamp(2.4rem, 5vw, 3.6rem)',
+              fontWeight: 900,
+              lineHeight: 1.25,
+              color: '#1a1a1a',
+              marginBottom: '24px',
+              letterSpacing: '-0.03em',
+              wordBreak: 'keep-all',
+            }}>
+              아직도 혼자서<br />
+              다 하고 계신가요?
             </h1>
-            <p className="hero-sub">
-              열심히가 아니라, 구조로 이기는 법
-              <br />
-              매출의{" "}
-              <strong style={{ color: "var(--accent)" }}>판</strong>을 짜고
-              <br />
-              고객이 들어오는{" "}
-              <strong style={{ color: "var(--accent)" }}>루트</strong>를
-              설계합니다.
+            <p style={{
+              fontSize: '1.1rem',
+              lineHeight: 1.8,
+              color: '#555',
+              marginBottom: '40px',
+              wordBreak: 'keep-all',
+            }}>
+              열심히가 아니라, <strong style={{ color: '#1a1a1a' }}>구조로 이기는 법</strong>.<br />
+              매출의 판을 짜고, 고객이 들어오는 루트를 설계합니다.
             </p>
-            <div className="hero-stats">
-              <div className="stat">
-                <strong>7+</strong>
-                <span>Years</span>
+
+            <div style={{ display: 'flex', gap: '32px', marginBottom: '40px', flexWrap: 'wrap' }}>
+              <div>
+                <p style={{ fontSize: '2rem', fontWeight: 900, color: '#1a1a1a', lineHeight: 1 }}>7+</p>
+                <p style={{ fontSize: '0.85rem', color: '#666', marginTop: '4px' }}>Years</p>
               </div>
-              <div className="stat">
-                <strong>100+</strong>
-                <span>Customers</span>
+              <div>
+                <p style={{ fontSize: '2rem', fontWeight: 900, color: '#1a1a1a', lineHeight: 1 }}>100+</p>
+                <p style={{ fontSize: '0.85rem', color: '#666', marginTop: '4px' }}>Customers</p>
               </div>
-              <div className="stat">
-                <strong>200%</strong>
-                <span>Avg Growth</span>
+              <div>
+                <p style={{ fontSize: '2rem', fontWeight: 900, color: '#1a1a1a', lineHeight: 1 }}>200%</p>
+                <p style={{ fontSize: '0.85rem', color: '#666', marginTop: '4px' }}>Avg Growth</p>
               </div>
             </div>
-            <div className="hero-buttons">
-              <a href="#services" className="btn-primary">
-                서비스 둘러보기
-              </a>
-              <a href="#about" className="btn-secondary">
-                더 알아보기
-              </a>
+
+            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', flexWrap: 'wrap' }}>
+              <a href="#services" style={{
+                fontSize: '1rem',
+                fontWeight: 700,
+                color: '#1a1a1a',
+                textDecoration: 'none',
+                padding: '14px 0',
+                borderBottom: '2px solid #1a1a1a',
+              }}>서비스 둘러보기 →</a>
+              <a href="/about" style={{
+                fontSize: '1rem',
+                fontWeight: 500,
+                color: '#666',
+                textDecoration: 'none',
+                padding: '14px 0',
+              }}>대표 소개 →</a>
             </div>
           </div>
-          <div className="hero-image">
-            <img src="/images/logo-bg.png" alt="" className="hero-logo-bg" />
-            <img src="/images/hero.png" alt="EAZY 대표" />
+          <div style={{ position: 'relative', textAlign: 'center' }}>
+            <img src="/images/hero.png" alt="EAZY 대표" style={{
+              maxWidth: '100%',
+              borderRadius: '20px',
+              filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.08))',
+            }} />
           </div>
         </div>
       </section>

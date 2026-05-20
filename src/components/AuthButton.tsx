@@ -33,16 +33,15 @@ export default function AuthButton() {
 
   const baseStyle = {
     fontSize: '0.85rem',
-    fontWeight: 600,
-    color: '#fff',
-    background: 'rgba(255,255,255,0.08)',
-    border: '1px solid rgba(255,255,255,0.2)',
-    borderRadius: '8px',
-    padding: '8px 16px',
+    fontWeight: 500,
+    color: '#1a1a1a',
+    background: 'transparent',
+    border: 'none',
+    padding: '8px 4px',
     cursor: 'pointer',
     textDecoration: 'none',
     fontFamily: 'inherit',
-    transition: 'background 0.2s',
+    transition: 'opacity 0.2s',
     whiteSpace: 'nowrap' as const,
   };
 
